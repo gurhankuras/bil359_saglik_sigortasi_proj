@@ -11,6 +11,11 @@
 		22A18EFE275141BD0015B94B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18EFD275141BD0015B94B /* ContentView.swift */; };
 		22A18F00275141BD0015B94B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18EFF275141BD0015B94B /* Assets.xcassets */; };
 		22A18F03275141BD0015B94B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18F02275141BD0015B94B /* Preview Assets.xcassets */; };
+		22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */; };
+		22A18F0E275144950015B94B /* InsuranceCompaniesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */; };
+		22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* InsuranceCompany.swift */; };
+		22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F152751498F0015B94B /* CompanyTileView.swift */; };
+		22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		22A18EFD275141BD0015B94B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22A18EFF275141BD0015B94B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22A18F02275141BD0015B94B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatedHospitalsView.swift; sourceTree = "<group>"; };
+		22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompaniesView.swift; sourceTree = "<group>"; };
+		22A18F0F2751465B0015B94B /* InsuranceCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
+		22A18F152751498F0015B94B /* CompanyTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTileView.swift; sourceTree = "<group>"; };
+		22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAgeGroupsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +61,7 @@
 		22A18EFA275141BD0015B94B /* saglik_sigorta */ = {
 			isa = PBXGroup;
 			children = (
+				22A18F11275147B60015B94B /* Features */,
 				22A18EFB275141BD0015B94B /* saglik_sigortaApp.swift */,
 				22A18EFD275141BD0015B94B /* ContentView.swift */,
 				22A18EFF275141BD0015B94B /* Assets.xcassets */,
@@ -65,6 +76,66 @@
 				22A18F02275141BD0015B94B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		22A18F11275147B60015B94B /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F1A275185110015B94B /* HospitalListDisplay */,
+				22A18F1727514E300015B94B /* AgoGroupsDisplay */,
+				22A18F12275147C00015B94B /* InsuranceCompaniesDisplay */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		22A18F12275147C00015B94B /* InsuranceCompaniesDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F1D275186BF0015B94B /* ViewModel */,
+				22A18F1C275186B70015B94B /* View */,
+				22A18F1B275186A80015B94B /* Model */,
+			);
+			path = InsuranceCompaniesDisplay;
+			sourceTree = "<group>";
+		};
+		22A18F1727514E300015B94B /* AgoGroupsDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */,
+			);
+			path = AgoGroupsDisplay;
+			sourceTree = "<group>";
+		};
+		22A18F1A275185110015B94B /* HospitalListDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */,
+			);
+			path = HospitalListDisplay;
+			sourceTree = "<group>";
+		};
+		22A18F1B275186A80015B94B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F0F2751465B0015B94B /* InsuranceCompany.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22A18F1C275186B70015B94B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F152751498F0015B94B /* CompanyTileView.swift */,
+				22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22A18F1D275186BF0015B94B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +208,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */,
+				22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */,
+				22A18F0E275144950015B94B /* InsuranceCompaniesView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
+				22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
+				22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

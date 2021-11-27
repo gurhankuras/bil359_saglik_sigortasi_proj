@@ -12,24 +12,21 @@ import Foundation
 import SwiftUI
 
 struct InsuranceCompaniesView : View {
+    @State var searchText: String = ""
+    
+    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+
     // TODO: Get companies from network call and move it into a service
     var body: some View {
         VStack {
-            SearchBar()
-            CompanyListView()
+            SearchBar(searchText: $searchText,
+                      placeholder: "Şirket Arama",
+                      actionText: "Ara",
+                      searchAction: searchCompanyHandler)
+            InsuranceCompaniesBodyView()
+            
         }.padding(.bottom, 50)
-    }
-}
-
-
-// TODO: Change the generic name more specific
-struct SearchBar: View {
-    var body: some View {
-        HStack {
-            SearchBox()
-            Button("Ara", action: searchCompanyHandler)
-        }
-        .padding(.horizontal)
+            .navigationTitle("Sigorta Şirketleri")
     }
     
     func searchCompanyHandler() -> Void {
@@ -37,10 +34,49 @@ struct SearchBar: View {
     }
 }
 
+struct InsuranceCompaniesBodyView: View {
+    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+
+    var body: some View {
+        if (companyViewModel.error != nil) {
+            ErrorView(message: companyViewModel.error?.rawValue)
+        }
+        else if (companyViewModel.companiesLoading) {
+            VStack {
+                Spacer()
+                ProgressView()
+                Spacer()
+            }
+        } else {
+            CompanyListView()
+        }
+    }
+}
+
+
+// TODO: Change the generic name more specific
+struct SearchBar: View {
+    @Binding var searchText: String
+    let placeholder: String
+    let actionText: String
+
+    let searchAction: () -> Void
+    
+    var body: some View {
+        HStack {
+            SearchBox(searchText: $searchText, placeholder: placeholder)
+            Button(actionText, action: searchAction)
+        }
+        .padding(.horizontal)
+    }
+}
+
 // TODO: Make this component more generic
 struct SearchBox: View {
-    @State var searchText: String = ""
+    @Binding var searchText: String
     @FocusState private var searchFieldIsFocused: Bool
+
+    let placeholder: String
     
     var body: some View {
         HStack(alignment: .firstTextBaseline, spacing: 0) {
@@ -52,7 +88,7 @@ struct SearchBox: View {
                 .onTapGesture {
                     searchFieldIsFocused = true
                 }
-            TextField("Şirket Arama", text: $searchText)
+            TextField(placeholder, text: $searchText)
                 .focused($searchFieldIsFocused)
         }
         .background(Color(.systemGray6))
@@ -62,20 +98,23 @@ struct SearchBox: View {
 }
 
 struct CompanyListView: View {
-    let companies : [InsuranceCompany] = InsuranceCompany.companies
+    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+
     
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(companies) { company in
+                ForEach(companyViewModel.remoteCompanies) { company in
                     CompanyTileView(company: company)
                         .padding([.leading])
                 }
             }
             .padding(.top)
-            
+           // .onAppear {
+            //    viewModel.fetchCompanies()
+            //}
         }
-        .navigationTitle("Sigorta Şirketleri")
+       
     }
 }
 
@@ -86,6 +125,8 @@ struct InsuranceCompanies_Previews: PreviewProvider {
             
     }
 }
+
+
 
 
 

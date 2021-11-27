@@ -16,7 +16,29 @@
 		22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* InsuranceCompany.swift */; };
 		22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F152751498F0015B94B /* CompanyTileView.swift */; };
 		22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */; };
+		22BA96F92752258F0045BAE1 /* InsuranceCompaniesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */; };
+		22BA96FB275229890045BAE1 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FA275229890045BAE1 /* Hospital.swift */; };
+		22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */; };
+		22BA970327522CF40045BAE1 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA970227522CF40045BAE1 /* LazyView.swift */; };
+		22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA97042752429C0045BAE1 /* ApiUrls.swift */; };
+		22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA9709275245080045BAE1 /* AgeBasedOfferViewModel.swift */; };
+		22BA970D275249570045BAE1 /* ValidationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA970C275249570045BAE1 /* ValidationService.swift */; };
+		22BA971527524FDF0045BAE1 /* saglik_sigortaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA971427524FDF0045BAE1 /* saglik_sigortaTests.swift */; };
+		22BA971C275250630045BAE1 /* ValidationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA971B275250630045BAE1 /* ValidationServiceTests.swift */; };
+		22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA971E275263A10045BAE1 /* CompaniesService.swift */; };
+		22BA9721275271340045BAE1 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA9720275271340045BAE1 /* ErrorView.swift */; };
+		22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA97222752721B0045BAE1 /* AppSymbols.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		22BA971627524FDF0045BAE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 22A18EF0275141BD0015B94B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 22A18EF7275141BD0015B94B;
+			remoteInfo = saglik_sigorta;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		22A18EF8275141BD0015B94B /* saglik_sigorta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saglik_sigorta.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,10 +51,30 @@
 		22A18F0F2751465B0015B94B /* InsuranceCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
 		22A18F152751498F0015B94B /* CompanyTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTileView.swift; sourceTree = "<group>"; };
 		22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAgeGroupsView.swift; sourceTree = "<group>"; };
+		22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompaniesViewModel.swift; sourceTree = "<group>"; };
+		22BA96FA275229890045BAE1 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
+		22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalsViewModel.swift; sourceTree = "<group>"; };
+		22BA970227522CF40045BAE1 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		22BA97042752429C0045BAE1 /* ApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrls.swift; sourceTree = "<group>"; };
+		22BA9709275245080045BAE1 /* AgeBasedOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeBasedOfferViewModel.swift; sourceTree = "<group>"; };
+		22BA970C275249570045BAE1 /* ValidationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationService.swift; sourceTree = "<group>"; };
+		22BA971227524FDF0045BAE1 /* saglik_sigortaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = saglik_sigortaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22BA971427524FDF0045BAE1 /* saglik_sigortaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saglik_sigortaTests.swift; sourceTree = "<group>"; };
+		22BA971B275250630045BAE1 /* ValidationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationServiceTests.swift; sourceTree = "<group>"; };
+		22BA971E275263A10045BAE1 /* CompaniesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesService.swift; sourceTree = "<group>"; };
+		22BA9720275271340045BAE1 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		22BA97222752721B0045BAE1 /* AppSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		22A18EF5275141BD0015B94B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22BA970F27524FDF0045BAE1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				22A18EFA275141BD0015B94B /* saglik_sigorta */,
+				22BA971327524FDF0045BAE1 /* saglik_sigortaTests */,
 				22A18EF9275141BD0015B94B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				22A18EF8275141BD0015B94B /* saglik_sigorta.app */,
+				22BA971227524FDF0045BAE1 /* saglik_sigortaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +105,7 @@
 		22A18EFA275141BD0015B94B /* saglik_sigorta */ = {
 			isa = PBXGroup;
 			children = (
+				22BA970127522CC90045BAE1 /* Shared */,
 				22A18F11275147B60015B94B /* Features */,
 				22A18EFB275141BD0015B94B /* saglik_sigortaApp.swift */,
 				22A18EFD275141BD0015B94B /* ContentView.swift */,
@@ -91,9 +136,10 @@
 		22A18F12275147C00015B94B /* InsuranceCompaniesDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F1D275186BF0015B94B /* ViewModel */,
-				22A18F1C275186B70015B94B /* View */,
 				22A18F1B275186A80015B94B /* Model */,
+				22A18F1C275186B70015B94B /* View */,
+				22A18F1D275186BF0015B94B /* ViewModel */,
+				22BA971D275263850045BAE1 /* Service */,
 			);
 			path = InsuranceCompaniesDisplay;
 			sourceTree = "<group>";
@@ -101,7 +147,10 @@
 		22A18F1727514E300015B94B /* AgoGroupsDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */,
+				22BA9707275244C50045BAE1 /* Model */,
+				22BA9706275244BD0045BAE1 /* View */,
+				22BA9708275244CD0045BAE1 /* Viewmodel */,
+				22BA970B275249480045BAE1 /* Service */,
 			);
 			path = AgoGroupsDisplay;
 			sourceTree = "<group>";
@@ -109,7 +158,9 @@
 		22A18F1A275185110015B94B /* HospitalListDisplay */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */,
+				22BA96FD275229960045BAE1 /* Model */,
+				22BA96FE275229B10045BAE1 /* ViewModel */,
+				22BA96FC275229900045BAE1 /* View */,
 			);
 			path = HospitalListDisplay;
 			sourceTree = "<group>";
@@ -127,6 +178,7 @@
 			children = (
 				22A18F152751498F0015B94B /* CompanyTileView.swift */,
 				22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */,
+				22BA9720275271340045BAE1 /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,8 +186,91 @@
 		22A18F1D275186BF0015B94B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22BA96FC275229900045BAE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22BA96FD275229960045BAE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				22BA96FA275229890045BAE1 /* Hospital.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22BA96FE275229B10045BAE1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		22BA970127522CC90045BAE1 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				22BA970227522CF40045BAE1 /* LazyView.swift */,
+				22BA97042752429C0045BAE1 /* ApiUrls.swift */,
+				22BA97222752721B0045BAE1 /* AppSymbols.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		22BA9706275244BD0045BAE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22BA9707275244C50045BAE1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22BA9708275244CD0045BAE1 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				22BA9709275245080045BAE1 /* AgeBasedOfferViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		22BA970B275249480045BAE1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22BA970C275249570045BAE1 /* ValidationService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		22BA971327524FDF0045BAE1 /* saglik_sigortaTests */ = {
+			isa = PBXGroup;
+			children = (
+				22BA971427524FDF0045BAE1 /* saglik_sigortaTests.swift */,
+				22BA971B275250630045BAE1 /* ValidationServiceTests.swift */,
+			);
+			path = saglik_sigortaTests;
+			sourceTree = "<group>";
+		};
+		22BA971D275263850045BAE1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22BA971E275263A10045BAE1 /* CompaniesService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +293,24 @@
 			productReference = 22A18EF8275141BD0015B94B /* saglik_sigorta.app */;
 			productType = "com.apple.product-type.application";
 		};
+		22BA971127524FDF0045BAE1 /* saglik_sigortaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22BA971827524FDF0045BAE1 /* Build configuration list for PBXNativeTarget "saglik_sigortaTests" */;
+			buildPhases = (
+				22BA970E27524FDF0045BAE1 /* Sources */,
+				22BA970F27524FDF0045BAE1 /* Frameworks */,
+				22BA971027524FDF0045BAE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22BA971727524FDF0045BAE1 /* PBXTargetDependency */,
+			);
+			name = saglik_sigortaTests;
+			productName = saglik_sigortaTests;
+			productReference = 22BA971227524FDF0045BAE1 /* saglik_sigortaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,6 +323,10 @@
 				TargetAttributes = {
 					22A18EF7275141BD0015B94B = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					22BA971127524FDF0045BAE1 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 22A18EF7275141BD0015B94B;
 					};
 				};
 			};
@@ -187,6 +344,7 @@
 			projectRoot = "";
 			targets = (
 				22A18EF7275141BD0015B94B /* saglik_sigorta */,
+				22BA971127524FDF0045BAE1 /* saglik_sigortaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -201,6 +359,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		22BA971027524FDF0045BAE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -208,17 +373,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */,
 				22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */,
 				22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */,
 				22A18F0E275144950015B94B /* InsuranceCompaniesView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
+				22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */,
 				22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */,
+				22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */,
+				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
+				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
+				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,
+				22BA970327522CF40045BAE1 /* LazyView.swift in Sources */,
+				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,
+				22BA96F92752258F0045BAE1 /* InsuranceCompaniesViewModel.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
 				22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */,
+				22BA9721275271340045BAE1 /* ErrorView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22BA970E27524FDF0045BAE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22BA971C275250630045BAE1 /* ValidationServiceTests.swift in Sources */,
+				22BA971527524FDF0045BAE1 /* saglik_sigortaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22BA971727524FDF0045BAE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 22A18EF7275141BD0015B94B /* saglik_sigorta */;
+			targetProxy = 22BA971627524FDF0045BAE1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		22A18F04275141BD0015B94B /* Debug */ = {
@@ -395,6 +587,52 @@
 			};
 			name = Release;
 		};
+		22BA971927524FDF0045BAE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH7GDXB49G;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gurhankuras.saglik-sigortaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saglik_sigorta.app/saglik_sigorta";
+			};
+			name = Debug;
+		};
+		22BA971A27524FDF0045BAE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH7GDXB49G;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "gurhankuras.saglik-sigortaTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/saglik_sigorta.app/saglik_sigorta";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -412,6 +650,15 @@
 			buildConfigurations = (
 				22A18F07275141BD0015B94B /* Debug */,
 				22A18F08275141BD0015B94B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22BA971827524FDF0045BAE1 /* Build configuration list for PBXNativeTarget "saglik_sigortaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22BA971927524FDF0045BAE1 /* Debug */,
+				22BA971A27524FDF0045BAE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

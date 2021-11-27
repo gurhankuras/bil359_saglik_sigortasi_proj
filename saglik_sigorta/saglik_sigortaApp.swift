@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct saglik_sigortaApp: App {
+    let companiesViewModel = InsuranceCompaniesViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(companiesViewModel)
         }
+        
     }
 }

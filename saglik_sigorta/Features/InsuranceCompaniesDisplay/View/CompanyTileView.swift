@@ -23,19 +23,27 @@ struct CompanyTileView: View {
             CompanyLogo(url: company.image)
             Text(company.name)
                 .font(.caption)
+            
             Spacer()
             AgeGroupsButton(
                 text: "Yaş Grupları",
-                destination: InsuranceAgeGroupView()
+                destination: {
+                    InsuranceAgeGroupView()
+                }
             )
             HospitalsButton(
                 text: "Hastaneler",
-                destination: AffiliatedHospitalsView(),
+                destination: {
+                    AffiliatedHospitalsView()
+                },
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
                 
             )
             Spacer()
+             
             
+        }.onAppear {
+            print(company.id)
         }
     }
 }
@@ -55,11 +63,11 @@ struct CompanyLogo: View {
 // TODO: Use base button. dont repeat
 struct AgeGroupsButton<Destination: View> : View{
     let text: String
-    let destination: Destination
+    let destination: () -> Destination
     
     var body: some View {
         NavigationLink(
-            destination: destination,
+            destination: LazyView(view: destination),
             label: {
                     Text(text)
                         .font(.caption)
@@ -74,12 +82,12 @@ struct AgeGroupsButton<Destination: View> : View{
 
 struct HospitalsButton<Destination: View, Icon: View> : View{
     let text: String
-    let destination: Destination
+    let destination: () -> Destination
     let icon: Icon
     
     var body: some View {
         NavigationLink(
-            destination: destination,
+            destination: LazyView(view: destination),
             label: {
                 HStack(spacing: 0) {
                     icon
@@ -104,7 +112,7 @@ struct HospitalsButton<Destination: View, Icon: View> : View{
     }
 }
 
-
+/*
 struct CompanyTileView_Previews: PreviewProvider {
     static let exampleCompany = InsuranceCompany.exampleCompany
     
@@ -128,3 +136,4 @@ struct CompanyTileView_Previews: PreviewProvider {
         }
     }
 }
+*/

@@ -1,0 +1,104 @@
+//
+//  AffiliatedHospitalsView.swift
+//  saglik_sigorta
+//
+//  Created by Gürhan Kuraş on 11/26/21.
+//
+
+import Foundation
+import SwiftUI
+
+
+
+struct AffiliatedHospitalsView : View {
+    let companyId: String
+    @ObservedObject var hospitalVM: HospitalsViewModel
+    @State var searchText: String = ""
+    
+    init(companyId: String) {
+        self.companyId = companyId
+        self.hospitalVM = HospitalsViewModel(companyId: companyId)
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            SearchBar(searchText: $searchText, placeholder: "Hastane Ara", actionText: "Ara") {
+                hospitalVM.searchCompany(searchText)
+            }
+            ScrollView {
+                LazyVStack {
+                    ForEach(hospitalVM.hospitals) { hospital in
+                        HospitalView(hospital)
+                            .onAppear {
+                                hospitalVM.loadMore(currentItem: hospital)
+                            }
+                }
+                .padding(.top)
+                
+            }
+        
+        }
+            .navigationTitle("Hastaneler")
+            
+    }
+}
+}
+
+struct TeklifAlButton: View {
+    var body: some View {
+            Text("Teklif Al")
+                .padding(10)
+                .lineLimit(1)
+                .font(.callout)
+                .foregroundColor(.white)
+                .background(.primary)
+                .frame(minWidth: 80)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+    }
+}
+
+
+
+struct AffiliatedHospitalsView_Previews: PreviewProvider {
+    static var previews: some View {
+        AffiliatedHospitalsView(companyId: "").preferredColorScheme(.dark).previewDevice("Iphone 11")
+            
+    }
+}
+
+struct HospitalView: View {
+    let hospital: Hospital
+    
+    init(_ hospital: Hospital) {
+        self.hospital = hospital
+    }
+    
+    var body: some View {
+        HStack() {
+            Text(hospital.name)
+                .multilineTextAlignment(.center)
+                .fixedSize(horizontal: false, vertical: true)
+                .frame(width: 100)
+            Spacer()
+            VStack {
+                Text("İl:").font(.subheadline)
+                    .padding(.bottom, 2)
+                Text(hospital.address.il).bold()
+            }
+            Spacer()
+            VStack {
+                Text("İlçe:").font(.subheadline)
+                    .padding(.bottom, 2)
+                Text(hospital.address.ilce).bold()
+            }
+            Spacer()
+            NavigationLink(destination: TeklifAlView(), label: {
+                TeklifAlButton()
+                    .font(.callout)
+                    .padding(.vertical, 10)
+                    .padding(.horizontal)
+            })
+            
+        }
+    }
+}

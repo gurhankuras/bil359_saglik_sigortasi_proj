@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct saglik_sigortaApp: App {
-    let companiesViewModel = InsuranceCompaniesViewModel()
+    let companiesViewModel = CompaniesViewModel()
 
     var body: some Scene {
         WindowGroup {

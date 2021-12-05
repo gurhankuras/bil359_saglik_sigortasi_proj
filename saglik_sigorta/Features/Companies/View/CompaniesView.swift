@@ -11,10 +11,10 @@ import Foundation
 import Foundation
 import SwiftUI
 
-struct InsuranceCompaniesView : View {
+struct CompaniesView : View {
     @State var searchText: String = ""
     
-    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+    @EnvironmentObject var companyViewModel: CompaniesViewModel
 
     // TODO: Get companies from network call and move it into a service
     var body: some View {
@@ -23,19 +23,22 @@ struct InsuranceCompaniesView : View {
                       placeholder: "Şirket Arama",
                       actionText: "Ara",
                       searchAction: searchCompanyHandler)
-            InsuranceCompaniesBodyView()
+            CompaniesBodyView()
             
         }.padding(.bottom, 50)
             .navigationTitle("Sigorta Şirketleri")
     }
     
     func searchCompanyHandler() -> Void {
-        
+        companyViewModel.searchCompany(searchText)
+        //Task.init {
+         //   await companyViewModel.searchCompany(searchText)
+       // }
     }
 }
 
-struct InsuranceCompaniesBodyView: View {
-    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+struct CompaniesBodyView: View {
+    @EnvironmentObject var companyViewModel: CompaniesViewModel
 
     var body: some View {
         if (companyViewModel.error != nil) {
@@ -50,6 +53,7 @@ struct InsuranceCompaniesBodyView: View {
         } else {
             CompanyListView()
         }
+        
     }
 }
 
@@ -98,21 +102,22 @@ struct SearchBox: View {
 }
 
 struct CompanyListView: View {
-    @EnvironmentObject var companyViewModel: InsuranceCompaniesViewModel
+    @EnvironmentObject var companyViewModel: CompaniesViewModel
 
     
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(companyViewModel.remoteCompanies) { company in
+                ForEach(companyViewModel.companies) { company in
                     CompanyTileView(company: company)
                         .padding([.leading])
+                        .onAppear {
+                            companyViewModel.loadMore(currentItem: company)
+                        }
                 }
             }
             .padding(.top)
-           // .onAppear {
-            //    viewModel.fetchCompanies()
-            //}
+            
         }
        
     }

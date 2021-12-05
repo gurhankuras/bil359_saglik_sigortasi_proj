@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		222A350327578DE200C9CF7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A350227578DE200C9CF7D /* Alamofire */; };
+		22905C0827566EE400DF1170 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0727566EE400DF1170 /* Offer.swift */; };
+		22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0D275674B600DF1170 /* TeklifAlView.swift */; };
+		22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C102756790C00DF1170 /* TeklifAlViewModel.swift */; };
+		22905C16275682D700DF1170 /* TeklifSonucDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C15275682D700DF1170 /* TeklifSonucDetailsView.swift */; };
 		22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18EFB275141BD0015B94B /* saglik_sigortaApp.swift */; };
 		22A18EFE275141BD0015B94B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18EFD275141BD0015B94B /* ContentView.swift */; };
 		22A18F00275141BD0015B94B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18EFF275141BD0015B94B /* Assets.xcassets */; };
 		22A18F03275141BD0015B94B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18F02275141BD0015B94B /* Preview Assets.xcassets */; };
 		22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */; };
-		22A18F0E275144950015B94B /* InsuranceCompaniesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */; };
+		22A18F0E275144950015B94B /* CompaniesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0D275144950015B94B /* CompaniesView.swift */; };
 		22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* InsuranceCompany.swift */; };
 		22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F152751498F0015B94B /* CompanyTileView.swift */; };
 		22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */; };
@@ -28,6 +33,8 @@
 		22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA971E275263A10045BAE1 /* CompaniesService.swift */; };
 		22BA9721275271340045BAE1 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA9720275271340045BAE1 /* ErrorView.swift */; };
 		22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA97222752721B0045BAE1 /* AppSymbols.swift */; };
+		22E11CE62755076900827590 /* HospitalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E11CE52755076900827590 /* HospitalService.swift */; };
+		22E11CE827550A1300827590 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E11CE727550A1300827590 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22905C0727566EE400DF1170 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		22905C0D275674B600DF1170 /* TeklifAlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlView.swift; sourceTree = "<group>"; };
+		22905C102756790C00DF1170 /* TeklifAlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlViewModel.swift; sourceTree = "<group>"; };
+		22905C15275682D700DF1170 /* TeklifSonucDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifSonucDetailsView.swift; sourceTree = "<group>"; };
 		22A18EF8275141BD0015B94B /* saglik_sigorta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = saglik_sigorta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22A18EFB275141BD0015B94B /* saglik_sigortaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saglik_sigortaApp.swift; sourceTree = "<group>"; };
 		22A18EFD275141BD0015B94B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22A18EFF275141BD0015B94B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22A18F02275141BD0015B94B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatedHospitalsView.swift; sourceTree = "<group>"; };
-		22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompaniesView.swift; sourceTree = "<group>"; };
+		22A18F0D275144950015B94B /* CompaniesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesView.swift; sourceTree = "<group>"; };
 		22A18F0F2751465B0015B94B /* InsuranceCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
 		22A18F152751498F0015B94B /* CompanyTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTileView.swift; sourceTree = "<group>"; };
 		22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAgeGroupsView.swift; sourceTree = "<group>"; };
@@ -64,6 +75,8 @@
 		22BA971E275263A10045BAE1 /* CompaniesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesService.swift; sourceTree = "<group>"; };
 		22BA9720275271340045BAE1 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		22BA97222752721B0045BAE1 /* AppSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSymbols.swift; sourceTree = "<group>"; };
+		22E11CE52755076900827590 /* HospitalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalService.swift; sourceTree = "<group>"; };
+		22E11CE727550A1300827590 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				222A350327578DE200C9CF7D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		22905C092756747D00DF1170 /* TeklifAlEkrani */ = {
+			isa = PBXGroup;
+			children = (
+				22905C0F275678D900DF1170 /* Viewmodel */,
+				22905C0A2756748E00DF1170 /* View */,
+			);
+			path = TeklifAlEkrani;
+			sourceTree = "<group>";
+		};
+		22905C0A2756748E00DF1170 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22905C0D275674B600DF1170 /* TeklifAlView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		22905C0F275678D900DF1170 /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				22905C102756790C00DF1170 /* TeklifAlViewModel.swift */,
+			);
+			path = Viewmodel;
+			sourceTree = "<group>";
+		};
+		22905C13275682BA00DF1170 /* TeklifSonucDetails */ = {
+			isa = PBXGroup;
+			children = (
+				22905C14275682C900DF1170 /* View */,
+			);
+			path = TeklifSonucDetails;
+			sourceTree = "<group>";
+		};
+		22905C14275682C900DF1170 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22905C15275682D700DF1170 /* TeklifSonucDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		22A18EEF275141BD0015B94B = {
 			isa = PBXGroup;
 			children = (
@@ -126,14 +181,16 @@
 		22A18F11275147B60015B94B /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F1A275185110015B94B /* HospitalListDisplay */,
-				22A18F1727514E300015B94B /* AgoGroupsDisplay */,
-				22A18F12275147C00015B94B /* InsuranceCompaniesDisplay */,
+				22905C13275682BA00DF1170 /* TeklifSonucDetails */,
+				22905C092756747D00DF1170 /* TeklifAlEkrani */,
+				22A18F1A275185110015B94B /* Hospitals */,
+				22A18F1727514E300015B94B /* Ages */,
+				22A18F12275147C00015B94B /* Companies */,
 			);
 			path = Features;
 			sourceTree = "<group>";
 		};
-		22A18F12275147C00015B94B /* InsuranceCompaniesDisplay */ = {
+		22A18F12275147C00015B94B /* Companies */ = {
 			isa = PBXGroup;
 			children = (
 				22A18F1B275186A80015B94B /* Model */,
@@ -141,10 +198,10 @@
 				22A18F1D275186BF0015B94B /* ViewModel */,
 				22BA971D275263850045BAE1 /* Service */,
 			);
-			path = InsuranceCompaniesDisplay;
+			path = Companies;
 			sourceTree = "<group>";
 		};
-		22A18F1727514E300015B94B /* AgoGroupsDisplay */ = {
+		22A18F1727514E300015B94B /* Ages */ = {
 			isa = PBXGroup;
 			children = (
 				22BA9707275244C50045BAE1 /* Model */,
@@ -152,17 +209,18 @@
 				22BA9708275244CD0045BAE1 /* Viewmodel */,
 				22BA970B275249480045BAE1 /* Service */,
 			);
-			path = AgoGroupsDisplay;
+			path = Ages;
 			sourceTree = "<group>";
 		};
-		22A18F1A275185110015B94B /* HospitalListDisplay */ = {
+		22A18F1A275185110015B94B /* Hospitals */ = {
 			isa = PBXGroup;
 			children = (
+				22E11CE42755073800827590 /* Service */,
 				22BA96FD275229960045BAE1 /* Model */,
 				22BA96FE275229B10045BAE1 /* ViewModel */,
 				22BA96FC275229900045BAE1 /* View */,
 			);
-			path = HospitalListDisplay;
+			path = Hospitals;
 			sourceTree = "<group>";
 		};
 		22A18F1B275186A80015B94B /* Model */ = {
@@ -177,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				22A18F152751498F0015B94B /* CompanyTileView.swift */,
-				22A18F0D275144950015B94B /* InsuranceCompaniesView.swift */,
+				22A18F0D275144950015B94B /* CompaniesView.swift */,
 				22BA9720275271340045BAE1 /* ErrorView.swift */,
 			);
 			path = View;
@@ -221,6 +279,7 @@
 				22BA970227522CF40045BAE1 /* LazyView.swift */,
 				22BA97042752429C0045BAE1 /* ApiUrls.swift */,
 				22BA97222752721B0045BAE1 /* AppSymbols.swift */,
+				22E11CE727550A1300827590 /* ApiError.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -236,6 +295,7 @@
 		22BA9707275244C50045BAE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22905C0727566EE400DF1170 /* Offer.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,6 +333,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		22E11CE42755073800827590 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				22E11CE52755076900827590 /* HospitalService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,6 +357,9 @@
 			dependencies = (
 			);
 			name = saglik_sigorta;
+			packageProductDependencies = (
+				222A350227578DE200C9CF7D /* Alamofire */,
+			);
 			productName = saglik_sigorta;
 			productReference = 22A18EF8275141BD0015B94B /* saglik_sigorta.app */;
 			productType = "com.apple.product-type.application";
@@ -339,6 +410,9 @@
 				Base,
 			);
 			mainGroup = 22A18EEF275141BD0015B94B;
+			packageReferences = (
+				222A350127578DE200C9CF7D /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 22A18EF9275141BD0015B94B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,10 +447,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */,
 				22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */,
+				22E11CE62755076900827590 /* HospitalService.swift in Sources */,
 				22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */,
 				22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */,
-				22A18F0E275144950015B94B /* InsuranceCompaniesView.swift in Sources */,
+				22905C0827566EE400DF1170 /* Offer.swift in Sources */,
+				22A18F0E275144950015B94B /* CompaniesView.swift in Sources */,
+				22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
 				22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */,
 				22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */,
@@ -384,7 +462,9 @@
 				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
 				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,
+				22E11CE827550A1300827590 /* ApiError.swift in Sources */,
 				22BA970327522CF40045BAE1 /* LazyView.swift in Sources */,
+				22905C16275682D700DF1170 /* TeklifSonucDetailsView.swift in Sources */,
 				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,
 				22BA96F92752258F0045BAE1 /* InsuranceCompaniesViewModel.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
@@ -664,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		222A350127578DE200C9CF7D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		222A350227578DE200C9CF7D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 222A350127578DE200C9CF7D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 22A18EF0275141BD0015B94B /* Project object */;
 }

@@ -34,15 +34,19 @@ struct CompanyTileView: View {
             HospitalsButton(
                 text: "Hastaneler",
                 destination: {
-                    AffiliatedHospitalsView()
+                    AffiliatedHospitalsView(companyId: company.id)
                 },
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
                 
             )
-            Spacer()
+           
              
             
-        }.onAppear {
+        }
+        .padding(.trailing)
+        .padding(.vertical)
+        .padding(.vertical)
+        .onAppear {
             print(company.id)
         }
     }
@@ -53,9 +57,20 @@ struct CompanyTileView: View {
 struct CompanyLogo: View {
     let url: String
     var body: some View {
+        
         Circle().frame(width: 50, height: 50)
             .foregroundColor(.blue)
-    }
+         
+        /*
+        AsyncImage(url: URL(string: url)) { image in
+            image.resizable()
+        } placeholder: {
+            Color.blue
+        }
+        .frame(width: 50, height: 50)
+        .clipShape(Circle())
+    */
+         }
 }
 
 

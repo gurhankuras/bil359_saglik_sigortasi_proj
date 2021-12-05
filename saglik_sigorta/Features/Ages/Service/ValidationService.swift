@@ -9,15 +9,19 @@ import Foundation
 
 
 protocol FindOfferValidationServiceProtocol {
-    
+    func validateAge(_ age: String) throws -> Int
+    func validateHospitalName(_ name: String) throws -> String
 }
 
-struct FindOfferValidationService {
+struct FindOfferValidationService: FindOfferValidationServiceProtocol {
     
+    static let nonSpecialCharacters = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 ")
+
     enum ValidationError: LocalizedError {
         case invalidAgeRange
         case notNumber
         case invalidHospitalName
+        case containsSpecialCharacter
     
         var errorDescription: String? {
             switch self {
@@ -26,6 +30,8 @@ struct FindOfferValidationService {
             case .notNumber:
                 return "Lütfen bir sayı giriniz."
             case .invalidHospitalName:
+                return "Lütfen doğru bilgileri girdiğinizden emin olun."
+            case .containsSpecialCharacter:
                 return "Lütfen doğru bilgileri girdiğinizden emin olun."
             }
         
@@ -41,6 +47,10 @@ struct FindOfferValidationService {
     func validateHospitalName(_ name: String) throws -> String {
         let processedName = Int(name)
         if processedName != nil { throw ValidationError.invalidHospitalName }
+        if name.rangeOfCharacter(from: FindOfferValidationService.nonSpecialCharacters.inverted) != nil {
+            throw ValidationError.containsSpecialCharacter
+        }
+
         return name
     }
 }

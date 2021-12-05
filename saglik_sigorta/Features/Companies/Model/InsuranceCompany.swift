@@ -12,15 +12,21 @@ struct InsuranceCompany: Identifiable, Decodable{
     let id: String
     let name: String
     let image: String
-    let affiliatedHospitals: [String]
-    let ageGroup: String
+    let affiliatedHospitals: [String]?
+    //let ageGroup: String?
     
     // TODO: find more reasonable default for error case
+   /*
     var ageGroupRanged: ClosedRange<Int> {
         let splitted = ageGroup.components(separatedBy: "-")
         let start = Int(splitted[0]) ?? 0
         let end = Int(splitted[1]) ?? 0
         return start...end
+    }
+    */
+    
+    private enum CodingKeys : String, CodingKey {
+        case id="_id", name, image, affiliatedHospitals="hospitals"
     }
 }
 

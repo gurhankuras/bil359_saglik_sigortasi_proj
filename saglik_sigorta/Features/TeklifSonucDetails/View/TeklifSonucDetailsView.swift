@@ -14,8 +14,9 @@ struct TeklifSonucDetailsView: View {
             
             VStack(alignment: .leading) {
                 HStack {
-                    Circle()
-                        .frame(width: 75, height: 75)
+                    //Circle()
+                       // .frame(width: 75, height: 75)
+                    CompanyLogo(url: offer.company.image).frame(width: 75, height: 75)
                     // Spacer()
                     Text(offer.company.name)
                         .padding()

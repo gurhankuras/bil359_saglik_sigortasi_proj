@@ -50,20 +50,22 @@ class CompaniesViewModel : ObservableObject, RandomAccessCollection {
                 DispatchQueue.main.async {
                     self.error = error
                 }
-            case .success(let companies):
+            case .success(let fetchedCompanies):
                 DispatchQueue.main.async {
                     if warnNotFound {
-                        self.notFound = companies.isEmpty
+                        self.notFound = fetchedCompanies.isEmpty
                     }
+                    
                     switch insertMode {
                     case .append:
-                        self.companies.append(contentsOf: companies)
+                        self.companies.append(contentsOf: fetchedCompanies)
                     case .assign:
-                        self.companies = companies
+                        self.companies = fetchedCompanies
                     }
+                    
                     self.nextPageToLoad += 1
                     self.currentlyLoading = false
-                    self.allItemsLoaded = (companies.isEmpty)
+                    self.allItemsLoaded = (fetchedCompanies.isEmpty)
                 }
             }
         }

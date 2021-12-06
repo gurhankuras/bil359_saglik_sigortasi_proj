@@ -7,75 +7,30 @@
 
 import Foundation
 
+// TODO: move all these "load when scrolled" logic into
 
 class HospitalsViewModel: ObservableObject, RandomAccessCollection {
     // TODO: inject dependency
-    /*
-    let hospitalService: HospitalServiceProtocol = HospitalService()
-    
-    @Published var hospitals: [Hospital] = []
-    @Published var hospitalsLoading: Bool = false
-    @Published var error: ApiError?
-    @Published var filteredHospitals: [Hospital] = []
-    @Published var showSearchResults: Bool = false
-    
-    func loadHospitals(companyId: String) {
-        hospitalsLoading = true
-        hospitalService.fetchHospitals(for: companyId) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let hospitals):
-                DispatchQueue.main.async {
-                    self.hospitals = hospitals
-                }
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.error = error
-                }
-            }
-            DispatchQueue.main.async {
-                self.hospitalsLoading = false
-            }
-        }
-    }
-    
-    func searchHospital(_ name: String) {
-        guard !name.isEmpty else {
-            showSearchResults = false
-            print("burada")
-            return;
-        }
-        
-        filteredHospitals = hospitals.filter { hospital in
-            return hospital.name == name
-        }
-        showSearchResults = true
-    }
-     
-     */
-    
-    
-    
     typealias Element = Hospital
     
-    let companyId: String
     var startIndex: Int { hospitals.startIndex }
     var endIndex: Int { hospitals.endIndex }
-    
-    var nextPageToLoad: Int = 1
-    var currentlyLoading: Bool = false
-    var allItemsLoaded = false
     
     subscript(position: Int) -> Hospital {
         return hospitals[position]
     }
+
     
+    let companyId: String
     let hospitalService: HospitalServiceProtocol = HospitalService()
     @Published var hospitals = [Hospital]()
     @Published var hospitalsLoading: Bool = false
     @Published var error: ApiError?
     @Published var notFound: Bool = false
+    
+    var nextPageToLoad: Int = 1
+    var currentlyLoading: Bool = false
+    var allItemsLoaded = false
     
     init(companyId: String) {
         self.companyId = companyId
@@ -93,97 +48,74 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
         }
         currentlyLoading = true
        
-        hospitalService.fetchHospitals(for: companyId, page: nextPageToLoad, name: name) { result in
-            switch result {
-            case .failure(let error):
-                DispatchQueue.main.async {
-                    self.error = error
-                }
-            case .success(let hospitals):
-                DispatchQueue.main.async {
-                    if warnNotFound {
-                        self.notFound = hospitals.isEmpty
-                    }
-                    switch insertMode {
-                    case .append:
-                        self.hospitals.append(contentsOf: hospitals)
-                    case .assign:
-                        self.hospitals = hospitals
-                    }
-                    self.nextPageToLoad += 1
-                    self.currentlyLoading = false
-                    self.allItemsLoaded = (hospitals.isEmpty)
-                }
-            }
-        }
+        hospitalService.fetchHospitals(for: companyId, page: nextPageToLoad, name: name, completed: {
+            result in self.responseCallback(result: result, insertMode: insertMode, warnNotFound: warnNotFound) }
+        )
     }
     
-        
-
-     
+    
+    private func responseCallback(result: Result<[Hospital], ApiError>, insertMode: InsertMode, warnNotFound: Bool) {
+        switch result {
+        case .failure(let error):
+            DispatchQueue.main.async {
+                self.handleError(error: error)
+                self.currentlyLoading = false
+            }
+        case .success(let hospitals):
+            DispatchQueue.main.async {
+                if warnNotFound {
+                    self.notFound = hospitals.isEmpty
+                }
+                switch insertMode {
+                case .append:
+                    self.hospitals.append(contentsOf: hospitals)
+                case .assign:
+                    self.hospitals = hospitals
+                }
+                self.nextPageToLoad += 1
+                self.currentlyLoading = false
+                self.allItemsLoaded = (hospitals.isEmpty)
+            }
+        }
+        // result: Result<[Hospital], ApiError>
+    }
+    
+    private func handleError(error: ApiError) {
+        self.error = error
+    }
+    
     
     func shouldLoadMoreData(currentItem: Hospital? = nil) -> Bool {
-        if allItemsLoaded {
-            return false
-        }
-        if currentlyLoading {
-            return false
-        }
-        guard let currentItem = currentItem else {
-            return true
-        }
+        if allItemsLoaded { return false }
+        if currentlyLoading { return false }
         
-        guard let lastItem = hospitals.last else {
-            return true
-        }
+        guard let currentItem = currentItem else { return true }
+        guard let lastItem = hospitals.last else { return true }
         
         return currentItem.id == lastItem.id
     }
     
+   
     
-
-                                          /*
-    func fetchHospitals(page: Int, name: String? = nil) async -> Void {
-        if (currentlyLoading) {
-            return
-        }
-        
-        DispatchQueue.main.async {
-            self.hospitalsLoading = true
-        }
-        do {
-            let companies = try await hospitalService.fetchCompanies(page: page, name: name)
-            DispatchQueue.main.async {
-                self.companies = companies
-            }
-        }
-        catch {
-            DispatchQueue.main.async {
-                print(error)
-                self.error = (error as? ApiError) ?? .error
-            }
-        }
-        DispatchQueue.main.async {
-            self.companiesLoading = false
-        }
-    }
-                                           */
-    
-    func searchCompany(_ name: String) -> Void {
+    func searchFor(name: String) -> Void {
         DispatchQueue.main.async {
             self.error = nil
         }
         guard !name.isEmpty else {
-            // showSearchResults = false
-            // return;
-             self.nextPageToLoad = 1
-             self.allItemsLoaded = false
-             loadMore(currentItem: nil, name: nil, insertMode: .assign, warnNotFound: true)
-            return
+             _searchFor()
+             return
         }
-         self.nextPageToLoad = 1
-        self.allItemsLoaded = false
-         loadMore(currentItem: nil, name: name, insertMode: .assign, warnNotFound: true)
-        
+        _searchFor(name: name)
     }
+    
+    private func _searchFor(name: String? = nil) {
+        resetForNewRequest()
+        loadMore(currentItem: nil, name: name, insertMode: .assign, warnNotFound: true)
+    }
+    
+    private func resetForNewRequest() {
+        self.nextPageToLoad = 1
+        self.allItemsLoaded = false
+    }
+    
 }

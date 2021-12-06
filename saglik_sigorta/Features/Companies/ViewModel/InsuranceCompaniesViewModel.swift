@@ -29,6 +29,7 @@ class CompaniesViewModel : ObservableObject, RandomAccessCollection {
     @Published var companiesLoading: Bool = false
     @Published var error: ApiError?
     @Published var notFound: Bool = false
+    var searched: Bool = false
     
     init() {
         loadMore()
@@ -49,6 +50,7 @@ class CompaniesViewModel : ObservableObject, RandomAccessCollection {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self.error = error
+                    self.currentlyLoading = false
                 }
             case .success(let fetchedCompanies):
                 DispatchQueue.main.async {
@@ -127,12 +129,14 @@ class CompaniesViewModel : ObservableObject, RandomAccessCollection {
         DispatchQueue.main.async {
             self.error = nil
         }
+        self.searched = true
         guard !name.isEmpty else {
             // showSearchResults = false
             // return;
              self.nextPageToLoad = 1
              self.allItemsLoaded = false
              loadMore(currentItem: nil, name: nil, insertMode: .assign, warnNotFound: true)
+            self.searched = false
             return
         }
          self.nextPageToLoad = 1

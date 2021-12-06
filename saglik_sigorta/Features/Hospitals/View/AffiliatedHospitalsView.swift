@@ -23,7 +23,7 @@ struct AffiliatedHospitalsView : View {
     var body: some View {
         VStack(alignment: .leading) {
             SearchBar(searchText: $searchText, placeholder: "Hastane Ara", actionText: "Ara") {
-                hospitalVM.searchCompany(searchText)
+                hospitalVM.searchFor(name: searchText)
             }
             ScrollView {
                 LazyVStack {

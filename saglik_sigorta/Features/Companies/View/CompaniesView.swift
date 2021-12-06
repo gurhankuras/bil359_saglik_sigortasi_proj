@@ -33,6 +33,7 @@ struct CompaniesView : View {
     }
     
     func searchCompanyHandler() -> Void {
+        print("CLICKED SEARCH BUTTON")
         companyViewModel.searchCompany(searchText)
         //Task.init {
          //   await companyViewModel.searchCompany(searchText)
@@ -117,7 +118,9 @@ struct CompanyListView: View {
                     CompanyTileView(company: company)
                         .padding([.leading])
                         .onAppear {
-                            companyViewModel.loadMore(currentItem: company)
+                            if !companyViewModel.searched {
+                                companyViewModel.loadMore(currentItem: company)
+                            }
                         }
                 }
             }

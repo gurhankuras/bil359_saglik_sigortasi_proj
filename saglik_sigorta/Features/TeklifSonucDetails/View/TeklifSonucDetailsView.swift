@@ -70,7 +70,7 @@ struct TeklifSonucDetailsView: View {
 struct TeklifSonucDetailsView_Previews: PreviewProvider {
     static let offer = Offer(
         id: "sadasddddd",
-        company: InsuranceCompany(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
+        company: Company(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
         ageStart: 10,
         ageEnd: 21,
                              //age: 20,

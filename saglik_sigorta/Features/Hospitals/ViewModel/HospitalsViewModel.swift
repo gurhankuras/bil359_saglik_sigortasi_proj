@@ -7,48 +7,31 @@
 
 import Foundation
 
-// TODO: move all these "load when scrolled" logic into
-
-class HospitalsViewModel: ObservableObject, RandomAccessCollection {
+class HospitalsViewModel: ObservableObject {
+    var searched = false
     // TODO: inject dependency
-    typealias Element = Hospital
-    
-    var startIndex: Int { hospitals.startIndex }
-    var endIndex: Int { hospitals.endIndex }
-    
-    subscript(position: Int) -> Hospital {
-        return hospitals[position]
-    }
-
-    
+    let pg: Pagination = Pagination<Hospital>()
     let companyId: String
+    // TODO: inject dependency
     let hospitalService: HospitalServiceProtocol = HospitalService()
+    
     @Published var hospitals = [Hospital]()
     @Published var hospitalsLoading: Bool = false
     @Published var error: ApiError?
     @Published var notFound: Bool = false
-    
-    var nextPageToLoad: Int = 1
-    var currentlyLoading: Bool = false
-    var allItemsLoaded = false
     
     init(companyId: String) {
         self.companyId = companyId
         loadMore()
     }
     
-   
-    enum InsertMode {
-        case append, assign
-    }
-    
     func loadMore(currentItem: Hospital? = nil, name: String? = nil, insertMode: InsertMode = .append, warnNotFound: Bool = false) {
-        if !shouldLoadMoreData(currentItem: currentItem) {
+        if !pg.shouldLoadMoreData(currentItem: currentItem, items: hospitals) {
             return
         }
-        currentlyLoading = true
-       
-        hospitalService.fetchHospitals(for: companyId, page: nextPageToLoad, name: name, completed: {
+        pg.currentlyLoading = true
+        
+        hospitalService.fetchHospitals(for: companyId, page: pg.nextPageToLoad, name: name, completed: {
             result in self.responseCallback(result: result, insertMode: insertMode, warnNotFound: warnNotFound) }
         )
     }
@@ -59,7 +42,7 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
         case .failure(let error):
             DispatchQueue.main.async {
                 self.handleError(error: error)
-                self.currentlyLoading = false
+                self.pg.currentlyLoading = false
             }
         case .success(let hospitals):
             DispatchQueue.main.async {
@@ -67,55 +50,49 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
                     self.notFound = hospitals.isEmpty
                 }
                 switch insertMode {
-                case .append:
-                    self.hospitals.append(contentsOf: hospitals)
-                case .assign:
-                    self.hospitals = hospitals
+                    case .append:
+                        self.hospitals.append(contentsOf: hospitals)
+                    case .assign:
+                        self.hospitals = hospitals
                 }
-                self.nextPageToLoad += 1
-                self.currentlyLoading = false
-                self.allItemsLoaded = (hospitals.isEmpty)
+                self.pg.successfullyLoaded(itemsExhausted: hospitals.isEmpty)
             }
         }
-        // result: Result<[Hospital], ApiError>
     }
     
     private func handleError(error: ApiError) {
         self.error = error
     }
     
-    
-    func shouldLoadMoreData(currentItem: Hospital? = nil) -> Bool {
-        if allItemsLoaded { return false }
-        if currentlyLoading { return false }
-        
-        guard let currentItem = currentItem else { return true }
-        guard let lastItem = hospitals.last else { return true }
-        
-        return currentItem.id == lastItem.id
-    }
-    
    
-    
     func searchFor(name: String) -> Void {
         DispatchQueue.main.async {
             self.error = nil
         }
+        self.searched = true
         guard !name.isEmpty else {
              _searchFor()
+             self.searched = false
              return
         }
         _searchFor(name: name)
     }
     
     private func _searchFor(name: String? = nil) {
-        resetForNewRequest()
+        pg.resetForNewRequest()
         loadMore(currentItem: nil, name: name, insertMode: .assign, warnNotFound: true)
     }
+}
+
+
+
+extension HospitalsViewModel: RandomAccessCollection {
+    typealias Element = Hospital
     
-    private func resetForNewRequest() {
-        self.nextPageToLoad = 1
-        self.allItemsLoaded = false
+    var startIndex: Int { hospitals.startIndex }
+    var endIndex: Int { hospitals.endIndex }
+    
+    subscript(position: Int) -> Hospital {
+        return hospitals[position]
     }
-    
 }

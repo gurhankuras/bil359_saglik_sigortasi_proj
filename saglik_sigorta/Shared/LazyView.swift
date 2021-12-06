@@ -10,7 +10,7 @@ import SwiftUI
 struct LazyView<T: View>: View {
     init(view: @escaping () -> T) {
         self.view = view
-        print("LazyView initiliazed!")
+        // print("LazyView initiliazed!")
     }
     
     var view: () -> T

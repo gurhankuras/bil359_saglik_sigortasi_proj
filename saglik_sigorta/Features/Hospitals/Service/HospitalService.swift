@@ -18,6 +18,8 @@ protocol HospitalServiceProtocol {
 struct HospitalService: HospitalServiceProtocol {
     func fetchHospitals(for companyId: String, page: Int, name: String?, completed: @escaping ApiResultCallback<[Hospital], ApiError>) {
         
+        
+        // TODO: move URL string formatting logic into somewhere else
         var urlString = ApiUrls.getAffiliatedHospitals(for: companyId)
         urlString += "?page=\(page)"
         
@@ -25,6 +27,7 @@ struct HospitalService: HospitalServiceProtocol {
             urlString += "&name=\(name!.replacingOccurrences(of: " ", with: "%20"))"
         }
         
+        print(urlString)
         
         guard let url = URL(string: urlString) else {
             completed(.failure(.invalidUrl))

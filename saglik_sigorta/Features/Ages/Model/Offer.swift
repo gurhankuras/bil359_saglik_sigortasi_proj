@@ -10,7 +10,7 @@ import Foundation
 
 struct Offer: Decodable, Identifiable {
     let id: String
-    let company: InsuranceCompany
+    let company: Company
     let ageStart: Int
     let ageEnd: Int
     let amount: Double

@@ -34,7 +34,7 @@ struct CompaniesView : View {
     
     func searchCompanyHandler() -> Void {
         print("CLICKED SEARCH BUTTON")
-        companyViewModel.searchCompany(searchText)
+        companyViewModel.searchFor(name: searchText)
         //Task.init {
          //   await companyViewModel.searchCompany(searchText)
        // }
@@ -114,7 +114,7 @@ struct CompanyListView: View {
     var body: some View {
         ScrollView {
             LazyVStack {
-                ForEach(companyViewModel.companies) { company in
+                ForEach(companyViewModel) { company in
                     CompanyTileView(company: company)
                         .padding([.leading])
                         .onAppear {

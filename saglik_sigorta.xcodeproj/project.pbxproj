@@ -16,12 +16,14 @@
 		22A18EFE275141BD0015B94B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18EFD275141BD0015B94B /* ContentView.swift */; };
 		22A18F00275141BD0015B94B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18EFF275141BD0015B94B /* Assets.xcassets */; };
 		22A18F03275141BD0015B94B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22A18F02275141BD0015B94B /* Preview Assets.xcassets */; };
-		22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */; };
+		22A18F0C275143ED0015B94B /* HospitalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0B275143ED0015B94B /* HospitalsView.swift */; };
 		22A18F0E275144950015B94B /* CompaniesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0D275144950015B94B /* CompaniesView.swift */; };
-		22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* InsuranceCompany.swift */; };
+		22A18F102751465B0015B94B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* Company.swift */; };
 		22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F152751498F0015B94B /* CompanyTileView.swift */; };
-		22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */; };
-		22BA96F92752258F0045BAE1 /* InsuranceCompaniesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */; };
+		22A18F1927514E4D0015B94B /* AgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* AgesView.swift */; };
+		22A22C67275E74560016A1E8 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C66275E74560016A1E8 /* Pagination.swift */; };
+		22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C68275E74B10016A1E8 /* InsertMode.swift */; };
+		22BA96F92752258F0045BAE1 /* CompaniesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */; };
 		22BA96FB275229890045BAE1 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FA275229890045BAE1 /* Hospital.swift */; };
 		22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */; };
 		22BA970327522CF40045BAE1 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA970227522CF40045BAE1 /* LazyView.swift */; };
@@ -57,12 +59,14 @@
 		22A18EFD275141BD0015B94B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		22A18EFF275141BD0015B94B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22A18F02275141BD0015B94B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffiliatedHospitalsView.swift; sourceTree = "<group>"; };
+		22A18F0B275143ED0015B94B /* HospitalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalsView.swift; sourceTree = "<group>"; };
 		22A18F0D275144950015B94B /* CompaniesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesView.swift; sourceTree = "<group>"; };
-		22A18F0F2751465B0015B94B /* InsuranceCompany.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompany.swift; sourceTree = "<group>"; };
+		22A18F0F2751465B0015B94B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		22A18F152751498F0015B94B /* CompanyTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTileView.swift; sourceTree = "<group>"; };
-		22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceAgeGroupsView.swift; sourceTree = "<group>"; };
-		22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsuranceCompaniesViewModel.swift; sourceTree = "<group>"; };
+		22A18F1827514E4D0015B94B /* AgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgesView.swift; sourceTree = "<group>"; };
+		22A22C66275E74560016A1E8 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		22A22C68275E74B10016A1E8 /* InsertMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMode.swift; sourceTree = "<group>"; };
+		22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewModel.swift; sourceTree = "<group>"; };
 		22BA96FA275229890045BAE1 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalsViewModel.swift; sourceTree = "<group>"; };
 		22BA970227522CF40045BAE1 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
@@ -101,8 +105,8 @@
 		22905C092756747D00DF1170 /* TeklifAlEkrani */ = {
 			isa = PBXGroup;
 			children = (
-				22905C0F275678D900DF1170 /* Viewmodel */,
 				22905C0A2756748E00DF1170 /* View */,
+				22905C0F275678D900DF1170 /* Viewmodel */,
 			);
 			path = TeklifAlEkrani;
 			sourceTree = "<group>";
@@ -215,10 +219,10 @@
 		22A18F1A275185110015B94B /* Hospitals */ = {
 			isa = PBXGroup;
 			children = (
-				22E11CE42755073800827590 /* Service */,
 				22BA96FD275229960045BAE1 /* Model */,
-				22BA96FE275229B10045BAE1 /* ViewModel */,
 				22BA96FC275229900045BAE1 /* View */,
+				22BA96FE275229B10045BAE1 /* ViewModel */,
+				22E11CE42755073800827590 /* Service */,
 			);
 			path = Hospitals;
 			sourceTree = "<group>";
@@ -226,7 +230,7 @@
 		22A18F1B275186A80015B94B /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F0F2751465B0015B94B /* InsuranceCompany.swift */,
+				22A18F0F2751465B0015B94B /* Company.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,7 +248,7 @@
 		22A18F1D275186BF0015B94B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				22BA96F82752258F0045BAE1 /* InsuranceCompaniesViewModel.swift */,
+				22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -252,7 +256,7 @@
 		22BA96FC275229900045BAE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F0B275143ED0015B94B /* AffiliatedHospitalsView.swift */,
+				22A18F0B275143ED0015B94B /* HospitalsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +284,8 @@
 				22BA97042752429C0045BAE1 /* ApiUrls.swift */,
 				22BA97222752721B0045BAE1 /* AppSymbols.swift */,
 				22E11CE727550A1300827590 /* ApiError.swift */,
+				22A22C66275E74560016A1E8 /* Pagination.swift */,
+				22A22C68275E74B10016A1E8 /* InsertMode.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -287,7 +293,7 @@
 		22BA9706275244BD0045BAE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F1827514E4D0015B94B /* InsuranceAgeGroupsView.swift */,
+				22A18F1827514E4D0015B94B /* AgesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -450,14 +456,14 @@
 				22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */,
 				22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */,
 				22E11CE62755076900827590 /* HospitalService.swift in Sources */,
-				22A18F0C275143ED0015B94B /* AffiliatedHospitalsView.swift in Sources */,
-				22A18F102751465B0015B94B /* InsuranceCompany.swift in Sources */,
+				22A18F0C275143ED0015B94B /* HospitalsView.swift in Sources */,
+				22A18F102751465B0015B94B /* Company.swift in Sources */,
 				22905C0827566EE400DF1170 /* Offer.swift in Sources */,
 				22A18F0E275144950015B94B /* CompaniesView.swift in Sources */,
 				22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
 				22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */,
-				22A18F1927514E4D0015B94B /* InsuranceAgeGroupsView.swift in Sources */,
+				22A18F1927514E4D0015B94B /* AgesView.swift in Sources */,
 				22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */,
 				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
@@ -466,8 +472,10 @@
 				22BA970327522CF40045BAE1 /* LazyView.swift in Sources */,
 				22905C16275682D700DF1170 /* TeklifSonucDetailsView.swift in Sources */,
 				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,
-				22BA96F92752258F0045BAE1 /* InsuranceCompaniesViewModel.swift in Sources */,
+				22BA96F92752258F0045BAE1 /* CompaniesViewModel.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
+				22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */,
+				22A22C67275E74560016A1E8 /* Pagination.swift in Sources */,
 				22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */,
 				22BA9721275271340045BAE1 /* ErrorView.swift in Sources */,
 			);

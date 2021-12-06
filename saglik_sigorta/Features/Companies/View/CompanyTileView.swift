@@ -10,16 +10,10 @@ import SwiftUI
 
 
 struct CompanyTileView: View {
-    let company: InsuranceCompany
+    let company: Company
 
     var body: some View {
         HStack {
-            /*Image(company.image)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 100, height: 100)
-            
-             */
             CompanyLogo(url: company.image)
             Text(company.name)
                 .font(.caption)
@@ -28,13 +22,13 @@ struct CompanyTileView: View {
             AgeGroupsButton(
                 text: "Yaş Grupları",
                 destination: {
-                    InsuranceAgeGroupView()
+                   AgesView()
                 }
             )
             HospitalsButton(
                 text: "Hastaneler",
                 destination: {
-                    AffiliatedHospitalsView(companyId: company.id)
+                    HospitalsView(companyId: company.id)
                 },
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
                 
@@ -47,7 +41,7 @@ struct CompanyTileView: View {
         .padding(.vertical)
         .padding(.vertical)
         .onAppear {
-            print(company.id)
+            // print(company.id)
         }
     }
 }
@@ -57,11 +51,10 @@ struct CompanyTileView: View {
 struct CompanyLogo: View {
     let url: String
     var body: some View {
-        /*
         Circle().frame(width: 50, height: 50)
             .foregroundColor(.blue)
-         */
         
+        /*
         AsyncImage(url: URL(string: url)) { image in
             image.resizable()
         } placeholder: {
@@ -70,6 +63,7 @@ struct CompanyLogo: View {
         .frame(width: 50, height: 50)
         .clipShape(Circle())
     
+         */
          }
 }
 
@@ -129,7 +123,7 @@ struct HospitalsButton<Destination: View, Icon: View> : View{
 
 /*
 struct CompanyTileView_Previews: PreviewProvider {
-    static let exampleCompany = InsuranceCompany.exampleCompany
+    static let exampleCompany = Company.exampleCompany
     
     static var previews: some View {
         

@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 
-
-struct AffiliatedHospitalsView : View {
+//  TODO: move hardcoded texts to something else for localization etc.
+struct HospitalsView : View {
     let companyId: String
     @ObservedObject var hospitalVM: HospitalsViewModel
     @State var searchText: String = ""
@@ -30,7 +30,9 @@ struct AffiliatedHospitalsView : View {
                     ForEach(hospitalVM.hospitals) { hospital in
                         HospitalView(hospital)
                             .onAppear {
-                                hospitalVM.loadMore(currentItem: hospital)
+                                if !hospitalVM.searched {
+                                    hospitalVM.loadMore(currentItem: hospital)
+                                }
                             }
                 }
                 .padding(.top)
@@ -62,9 +64,9 @@ struct TeklifAlButton: View {
 
 
 
-struct AffiliatedHospitalsView_Previews: PreviewProvider {
+struct HospitalsView_Previews: PreviewProvider {
     static var previews: some View {
-        AffiliatedHospitalsView(companyId: "").preferredColorScheme(.dark).previewDevice("Iphone 11")
+        HospitalsView(companyId: "").preferredColorScheme(.dark).previewDevice("Iphone 11")
             
     }
 }

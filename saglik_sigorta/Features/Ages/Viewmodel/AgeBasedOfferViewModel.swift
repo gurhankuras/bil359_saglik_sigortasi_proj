@@ -22,7 +22,7 @@ class AgeBasedOfferViewModel: ObservableObject {
             self.offerIsLoading = true
             self.offer = Offer(
                 id: "sadasdsad",
-                company: InsuranceCompany(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
+                company: Company(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
                 ageStart: 10,
                 ageEnd: 20,
                                amount: 456,

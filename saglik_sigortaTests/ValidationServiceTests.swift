@@ -8,6 +8,7 @@
 @testable import saglik_sigorta
 import XCTest
 
+// TODO: refactor copy-pasted code
 class ValidationServiceTests: XCTestCase {
     typealias ValidationError = FindOfferValidationService.ValidationError
     

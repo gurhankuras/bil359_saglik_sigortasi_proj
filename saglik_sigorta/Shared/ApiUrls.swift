@@ -12,7 +12,7 @@ enum ApiUrls: String {
     static let baseUrl = "http://localhost:3000"
     
     static func url(path: ApiUrls) -> String {
-        print("GET ")
+        // print("GET ")
         return "\(ApiUrls.baseUrl)\(path.rawValue)"
     }
     
@@ -20,13 +20,13 @@ enum ApiUrls: String {
     
     static func getAffiliatedHospitals(for companyId: String) -> String {
         let formattedURL = "\(baseUrl)\(ApiUrls.companies.rawValue)/\(companyId)/hospitals"
-        print(formattedURL)
+        // print(formattedURL)
         return formattedURL
     }
     
     static func offer(companyId: String) -> String {
         let formattedURL = "\(baseUrl)/api/companies/\(companyId)/offer"
-        print(formattedURL)
+        // print(formattedURL)
         return formattedURL
     }
 }

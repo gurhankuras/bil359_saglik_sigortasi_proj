@@ -10,12 +10,12 @@ import Foundation
 
 protocol CompanyServiceProtocol {
     
-    //func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[InsuranceCompany], ApiError>)
+    //func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[Company], ApiError>)
 }
 
 /*: CompanyServiceProtocol*/
 struct CompaniesService{
-    func fetchCompanies(page: Int, name: String?) async throws -> [InsuranceCompany] {
+    func fetchCompanies(page: Int, name: String?) async throws -> [Company] {
         var urlString = ApiUrls.url(path: ApiUrls.companies)
         urlString += "?page=\(page)"
         if name != nil {
@@ -29,7 +29,7 @@ struct CompaniesService{
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.error }
-        guard let companies = try? JSONDecoder().decode([InsuranceCompany].self, from: data) else {
+        guard let companies = try? JSONDecoder().decode([Company].self, from: data) else {
             throw ApiError.badResponseData
         }
         
@@ -37,13 +37,15 @@ struct CompaniesService{
     }
     
     // TODO: add pagination
-         func fetchCompanies(page: Int, name: String?, completed: @escaping ApiResultCallback<[InsuranceCompany], ApiError>) {
+         func fetchCompanies(page: Int, name: String?, completed: @escaping ApiResultCallback<[Company], ApiError>) {
              
              var urlString = ApiUrls.url(path: ApiUrls.companies)
              urlString += "?page=\(page)"
              if name != nil {
                  urlString += "&name=\(name!.replacingOccurrences(of: " ", with: "%20"))"
              }
+             
+             print(urlString)
              
              guard let url = URL(string: urlString) else {
                  completed(.failure(.invalidUrl))
@@ -58,7 +60,7 @@ struct CompaniesService{
                  }
              
                  do {
-                     let companies = try JSONDecoder().decode([InsuranceCompany].self, from: data)
+                     let companies = try JSONDecoder().decode([Company].self, from: data)
                      completed(.success(companies))
                  }
                  catch {
@@ -90,13 +92,13 @@ struct CompaniesService{
 
  protocol CompanyServiceProtocol {
      
-     func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[InsuranceCompany], ApiError>)
+     func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[Company], ApiError>)
  }
 
  struct CompaniesService: CompanyServiceProtocol {
      
      // TODO: add pagination
-     func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[InsuranceCompany], ApiError>) {
+     func fetchCompanies(page: Int?, name: String?, completed: @escaping ApiResultCallback<[Company], ApiError>) {
          
          var urlString = ApiUrls.url(path: ApiUrls.companies)
          if name != nil {
@@ -119,7 +121,7 @@ struct CompaniesService{
              }
          
              do {
-                 let companies = try JSONDecoder().decode([InsuranceCompany].self, from: data)
+                 let companies = try JSONDecoder().decode([Company].self, from: data)
                  completed(.success(companies))
              }
              catch {

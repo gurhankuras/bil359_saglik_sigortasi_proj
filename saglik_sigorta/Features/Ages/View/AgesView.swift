@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct InsuranceAgeGroupView : View {
+struct AgesView : View {
     let emptyStr = ""
     @StateObject var ageVM : AgeBasedOfferViewModel = AgeBasedOfferViewModel()
     var body: some View {
@@ -50,9 +50,9 @@ struct InsuranceAgeGroupView : View {
 
 
 
-struct InsuranceAgeGroupView_Previews: PreviewProvider {
+struct AgesView_Previews: PreviewProvider {
     static var previews: some View {
-        InsuranceAgeGroupView().previewDevice("Iphone 11")
+        AgesView().previewDevice("Iphone 11")
             .preferredColorScheme(.dark)
     }
 }

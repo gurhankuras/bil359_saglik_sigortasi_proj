@@ -69,7 +69,30 @@ class ValidationServiceTests: XCTestCase {
         
         XCTAssertEqual(expectedError, error)
         XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func test_hospital_name_is_empty() throws {
+        let expectedError =  ValidationError.invalidHospitalName
+        var error: ValidationError?
         
+        XCTAssertThrowsError(try validationService.validateHospitalName("")) { thrownError in
+            error = thrownError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
+    }
+    
+    func test_hospital_name_contains_special_character() throws {
+        let expectedError =  ValidationError.containsSpecialCharacter
+        var error: ValidationError?
+        
+        XCTAssertThrowsError(try validationService.validateHospitalName("Adnan+Hastanesi")) { thrownError in
+            error = thrownError as? ValidationError
+        }
+        
+        XCTAssertEqual(expectedError, error)
+        XCTAssertEqual(expectedError.errorDescription, error?.errorDescription)
     }
 
 }

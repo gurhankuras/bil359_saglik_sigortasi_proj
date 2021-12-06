@@ -27,6 +27,9 @@ struct CompaniesView : View {
             
         }.padding(.bottom, 50)
             .navigationTitle("Sigorta Şirketleri")
+            .alert("Bulunamadı", isPresented: $companyViewModel.notFound) {
+                Text("Tamam")
+            }
     }
     
     func searchCompanyHandler() -> Void {
@@ -69,6 +72,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             SearchBox(searchText: $searchText, placeholder: placeholder)
+            
             Button(actionText, action: searchAction)
         }
         .padding(.horizontal)
@@ -93,6 +97,7 @@ struct SearchBox: View {
                     searchFieldIsFocused = true
                 }
             TextField(placeholder, text: $searchText)
+                .disableAutocorrection(true)
                 .focused($searchFieldIsFocused)
         }
         .background(Color(.systemGray6))

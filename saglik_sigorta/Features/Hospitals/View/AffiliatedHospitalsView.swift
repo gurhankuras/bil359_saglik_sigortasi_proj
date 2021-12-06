@@ -39,6 +39,9 @@ struct AffiliatedHospitalsView : View {
         
         }
             .navigationTitle("Hastaneler")
+            .alert("Bulunamadı", isPresented: $hospitalVM.notFound) {
+                Text("Tamam")
+            }
             
     }
 }

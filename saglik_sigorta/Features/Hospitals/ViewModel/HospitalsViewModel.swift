@@ -75,10 +75,11 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
     @Published var hospitals = [Hospital]()
     @Published var hospitalsLoading: Bool = false
     @Published var error: ApiError?
+    @Published var notFound: Bool = false
     
     init(companyId: String) {
         self.companyId = companyId
-         loadMore()
+        loadMore()
     }
     
    
@@ -86,7 +87,7 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
         case append, assign
     }
     
-    func loadMore(currentItem: Hospital? = nil, name: String? = nil, insertMode: InsertMode = .append) {
+    func loadMore(currentItem: Hospital? = nil, name: String? = nil, insertMode: InsertMode = .append, warnNotFound: Bool = false) {
         if !shouldLoadMoreData(currentItem: currentItem) {
             return
         }
@@ -100,6 +101,9 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
                 }
             case .success(let hospitals):
                 DispatchQueue.main.async {
+                    if warnNotFound {
+                        self.notFound = hospitals.isEmpty
+                    }
                     switch insertMode {
                     case .append:
                         self.hospitals.append(contentsOf: hospitals)
@@ -174,12 +178,12 @@ class HospitalsViewModel: ObservableObject, RandomAccessCollection {
             // return;
              self.nextPageToLoad = 1
              self.allItemsLoaded = false
-             loadMore(currentItem: nil, name: nil, insertMode: .assign)
+             loadMore(currentItem: nil, name: nil, insertMode: .assign, warnNotFound: true)
             return
         }
          self.nextPageToLoad = 1
         self.allItemsLoaded = false
-         loadMore(currentItem: nil, name: name, insertMode: .assign)
+         loadMore(currentItem: nil, name: name, insertMode: .assign, warnNotFound: true)
         
     }
 }

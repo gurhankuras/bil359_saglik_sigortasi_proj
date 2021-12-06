@@ -45,11 +45,12 @@ struct FindOfferValidationService: FindOfferValidationServiceProtocol {
     }
     
     func validateHospitalName(_ name: String) throws -> String {
-        let processedName = Int(name)
-        if processedName != nil { throw ValidationError.invalidHospitalName }
+        if name.isEmpty { throw ValidationError.invalidHospitalName }
         if name.rangeOfCharacter(from: FindOfferValidationService.nonSpecialCharacters.inverted) != nil {
             throw ValidationError.containsSpecialCharacter
         }
+        let processedName = Int(name)
+        if processedName != nil { throw ValidationError.invalidHospitalName }
 
         return name
     }

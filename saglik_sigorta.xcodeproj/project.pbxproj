@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		222A350327578DE200C9CF7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A350227578DE200C9CF7D /* Alamofire */; };
+		2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */; };
 		22905C0827566EE400DF1170 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0727566EE400DF1170 /* Offer.swift */; };
 		22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0D275674B600DF1170 /* TeklifAlView.swift */; };
 		22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C102756790C00DF1170 /* TeklifAlViewModel.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExtension.swift; sourceTree = "<group>"; };
 		22905C0727566EE400DF1170 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		22905C0D275674B600DF1170 /* TeklifAlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlView.swift; sourceTree = "<group>"; };
 		22905C102756790C00DF1170 /* TeklifAlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlViewModel.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2236CC6627613A87003B7F5B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		22905C092756747D00DF1170 /* TeklifAlEkrani */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +290,7 @@
 		22BA970127522CC90045BAE1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2236CC6627613A87003B7F5B /* Extensions */,
 				22BA970227522CF40045BAE1 /* LazyView.swift */,
 				22BA97042752429C0045BAE1 /* ApiUrls.swift */,
 				22BA97222752721B0045BAE1 /* AppSymbols.swift */,
@@ -465,6 +476,7 @@
 				22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */,
 				22A18F1927514E4D0015B94B /* AgesView.swift in Sources */,
 				22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */,
+				2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */,
 				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
 				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,

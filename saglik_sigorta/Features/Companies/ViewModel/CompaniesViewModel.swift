@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import Combine
 
+
+struct DemoMessage: Codable {
+    let message: String
+}
 
 // TODO: extract all common functions
 class CompaniesViewModel : ObservableObject {
@@ -15,6 +20,7 @@ class CompaniesViewModel : ObservableObject {
     let companyService: CompaniesService = CompaniesService()
     let pg = Pagination<Company>()
     var searched: Bool = false
+    var cancellables = Set<AnyCancellable>()
     
     @Published var companies = [Company]()
     @Published var companiesLoading: Bool = false
@@ -80,10 +86,64 @@ class CompaniesViewModel : ObservableObject {
         pg.resetForNewRequest()
         loadMore(currentItem: nil, name: name, insertMode: .assign, warnNotFound: true)
     }
+    
+    
+    func deleteCompany(offsets: IndexSet) {
+        guard let willDeletedIndex = offsets.first else {
+            return;
+        }
+        
+        let willDeletedCompany = companies[willDeletedIndex]
+        print(willDeletedCompany)
+        
+        guard let request = makeDenemeRequest() else {
+            return
+        }
+        
+        URLSession.shared.dataTaskPublisher(for: request)
+            .receive(on: DispatchQueue.main)
+            .tryMap(handleOutput(output:))
+            .decode(type: DemoMessage.self, decoder: JSONDecoder())
+            .sink { (completion) in
+                switch completion {
+                case .finished:
+                    print("finished")
+                case .failure(let error):
+                    print("HATA OLDU")
+                }
+                print("COMPLETION: \(completion)")
+    
+            } receiveValue: {[weak self] msg in
+                print(msg.message)
+            }
+            .store(in: &cancellables)
+        companies.remove(atOffsets: offsets)
+    }
+    
+    private func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
+        let (data, response) = output;
+        guard let response = response as? HTTPURLResponse,
+              response.isGoodStatusCode else {
+                  throw URLError(.badServerResponse)
+              }
+        return data
+    }
+    
+    
+    private func makeDenemeRequest() -> URLRequest? {
+        guard let url = URL(string: ApiUrls.deneme()) else {
+            print("Error: cannot create URL")
+            return nil
+        }
+        // Create the request
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        return request
+    }
 }
 
 
-
+/*
 extension CompaniesViewModel: RandomAccessCollection {
     typealias Element = Company
     
@@ -94,3 +154,4 @@ extension CompaniesViewModel: RandomAccessCollection {
         return companies[position]
     }
 }
+*/

@@ -19,12 +19,13 @@ struct CompanyTileView: View {
                 .font(.caption)
             
             Spacer()
-            AgeGroupsButton(
+            /*AgeGroupsButton(
                 text: "Yaş Grupları",
                 destination: {
                    AgesView()
                 }
             )
+             */
             HospitalsButton(
                 text: "Hastaneler",
                 destination: {
@@ -118,6 +119,7 @@ struct HospitalsButton<Destination: View, Icon: View> : View{
                
                     
             })
+          
     }
 }
 

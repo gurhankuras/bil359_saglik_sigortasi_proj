@@ -29,4 +29,9 @@ enum ApiUrls: String {
         // print(formattedURL)
         return formattedURL
     }
+    
+    static func deneme() -> String {
+        let formattedUrl = "\(baseUrl)/api/deneme"
+        return formattedUrl
+    }
 }

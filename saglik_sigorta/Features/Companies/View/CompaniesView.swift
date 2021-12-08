@@ -112,21 +112,28 @@ struct CompanyListView: View {
 
     
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach(companyViewModel) { company in
+        List {
+            //LazyVStack {
+            ForEach(companyViewModel.companies) { company in
                     CompanyTileView(company: company)
                         .padding([.leading])
+                        
                         .onAppear {
                             if !companyViewModel.searched {
                                 companyViewModel.loadMore(currentItem: company)
                             }
                         }
+                        
+                }
+                .onDelete(perform: companyViewModel.deleteCompany(offsets:))
+            //}
+        }.listStyle(PlainListStyle())
+            .toolbar{
+                ToolbarItem(placement: .navigationBarLeading) {
+                    EditButton()
                 }
             }
-            .padding(.top)
-            
-        }
+        //.padding(.top)
        
     }
 }

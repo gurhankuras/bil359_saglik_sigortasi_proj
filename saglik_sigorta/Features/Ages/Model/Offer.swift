@@ -9,7 +9,7 @@ import Foundation
 
 
 struct Offer: Decodable, Identifiable {
-    let id: String
+    let id: Int
     let company: Company
     let ageStart: Int
     let ageEnd: Int
@@ -31,6 +31,6 @@ struct Offer: Decodable, Identifiable {
     }
     
     private enum CodingKeys : String, CodingKey {
-        case id="_id", company, ageStart, ageEnd, amount, hospital
+        case id, company, ageStart="age_start", ageEnd="age_end", amount="price", hospital
     }
 }

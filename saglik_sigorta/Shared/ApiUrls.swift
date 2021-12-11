@@ -18,13 +18,13 @@ enum ApiUrls: String {
     
     case companies = "/api/companies"
     
-    static func getAffiliatedHospitals(for companyId: String) -> String {
+    static func getAffiliatedHospitals(for companyId: Int) -> String {
         let formattedURL = "\(baseUrl)\(ApiUrls.companies.rawValue)/\(companyId)/hospitals"
         // print(formattedURL)
         return formattedURL
     }
     
-    static func offer(companyId: String) -> String {
+    static func offer(companyId: Int) -> String {
         let formattedURL = "\(baseUrl)/api/companies/\(companyId)/offer"
         // print(formattedURL)
         return formattedURL

@@ -11,11 +11,11 @@ import SwiftUI
 
 //  TODO: move hardcoded texts to something else for localization etc.
 struct HospitalsView : View {
-    let companyId: String
+    let companyId: Int
     @ObservedObject var hospitalVM: HospitalsViewModel
     @State var searchText: String = ""
     
-    init(companyId: String) {
+    init(companyId: Int) {
         self.companyId = companyId
         self.hospitalVM = HospitalsViewModel(companyId: companyId)
     }
@@ -44,6 +44,17 @@ struct HospitalsView : View {
             .alert("Bulunamadı", isPresented: $hospitalVM.notFound) {
                 Text("Tamam")
             }
+            .overlay(
+                NavigationLink(destination: {
+                    AddHospitalPage()
+                }, label: {
+                    AddButton()
+                })
+                    .tint(.white)
+                        ,
+                    alignment: .bottomTrailing
+               
+            )
             
     }
 }
@@ -66,7 +77,7 @@ struct TeklifAlButton: View {
 
 struct HospitalsView_Previews: PreviewProvider {
     static var previews: some View {
-        HospitalsView(companyId: "").preferredColorScheme(.dark).previewDevice("Iphone 11")
+        HospitalsView(companyId: 45).preferredColorScheme(.dark).previewDevice("Iphone 11")
             
     }
 }
@@ -105,5 +116,6 @@ struct HospitalView: View {
             })
             
         }
+    
     }
 }

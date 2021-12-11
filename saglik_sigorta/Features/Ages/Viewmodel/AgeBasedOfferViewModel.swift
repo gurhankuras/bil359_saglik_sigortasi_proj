@@ -21,13 +21,13 @@ class AgeBasedOfferViewModel: ObservableObject {
         DispatchQueue.main.async {
             self.offerIsLoading = true
             self.offer = Offer(
-                id: "sadasdsad",
-                company: Company(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
+                id: 34,
+                company: Company(id: 2, name: "Ak Sigorta", image: "sadasd"),
                 ageStart: 10,
                 ageEnd: 20,
                                amount: 456,
                                hospital:
-                                Hospital(id: "323334",
+                                Hospital(id: 4,
                                          name: "Adnan Hastanesi",
                                          address: Address(il: "",
                                                           ilce: "",

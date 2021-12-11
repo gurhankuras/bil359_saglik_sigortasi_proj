@@ -19,13 +19,14 @@ struct CompanyTileView: View {
                 .font(.caption)
             
             Spacer()
-            /*AgeGroupsButton(
+            AgeGroupsButton(
                 text: "Yaş Grupları",
                 destination: {
-                   AgesView()
+                   CompanyOffersPage()
                 }
             )
-             */
+             
+            /*
             HospitalsButton(
                 text: "Hastaneler",
                 destination: {
@@ -34,6 +35,7 @@ struct CompanyTileView: View {
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
                 
             )
+             */
            
              
             

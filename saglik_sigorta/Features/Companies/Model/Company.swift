@@ -9,12 +9,13 @@ import Foundation
 
 
 struct Company: Identifiable, Decodable{
-    let id: String
+    let id: Int
     let name: String
     let image: String
-    let affiliatedHospitals: [String]?
+    // let affiliatedHospitals: [String]?
     
     private enum CodingKeys : String, CodingKey {
-        case id="_id", name, image, affiliatedHospitals="hospitals"
+        case id, name="company_name", image
+        //, affiliatedHospitals="hospitals"
     }
 }

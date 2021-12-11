@@ -25,11 +25,24 @@ struct CompaniesView : View {
                       searchAction: searchCompanyHandler)
             CompaniesBodyView()
             
-        }.padding(.bottom, 50)
+        }
+     
+        .padding(.bottom, 50)
             .navigationTitle("Sigorta Şirketleri")
             .alert("Bulunamadı", isPresented: $companyViewModel.notFound) {
                 Text("Tamam")
             }
+            .overlay(
+                NavigationLink(destination: {
+                    AddCompanyPage()
+                }, label: {
+                    AddButton()
+                })
+                    .tint(.white)
+                        ,
+                    alignment: .bottomTrailing
+               
+            )
     }
     
     func searchCompanyHandler() -> Void {
@@ -139,9 +152,9 @@ struct CompanyListView: View {
 }
 
 
-struct InsuranceCompanies_Previews: PreviewProvider {
+struct CompaniesView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().preferredColorScheme(.dark).previewDevice("Iphone 11")
+        CompaniesView().preferredColorScheme(.dark).previewDevice("Iphone 11")
             
     }
 }

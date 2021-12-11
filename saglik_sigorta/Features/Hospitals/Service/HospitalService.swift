@@ -12,11 +12,11 @@ import Foundation
 typealias ApiResultCallback<R, E: Error> = (Result<R, E>) -> Void
 
 protocol HospitalServiceProtocol {
-    func fetchHospitals(for companyId: String, page: Int, name: String?, completed: @escaping ApiResultCallback<[Hospital], ApiError>)
+    func fetchHospitals(for companyId: Int, page: Int, name: String?, completed: @escaping ApiResultCallback<[Hospital], ApiError>)
 }
 
 struct HospitalService: HospitalServiceProtocol {
-    func fetchHospitals(for companyId: String, page: Int, name: String?, completed: @escaping ApiResultCallback<[Hospital], ApiError>) {
+    func fetchHospitals(for companyId: Int, page: Int, name: String?, completed: @escaping ApiResultCallback<[Hospital], ApiError>) {
         
         
         // TODO: move URL string formatting logic into somewhere else

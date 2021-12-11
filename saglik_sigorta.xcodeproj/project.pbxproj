@@ -24,6 +24,9 @@
 		22A18F1927514E4D0015B94B /* AgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* AgesView.swift */; };
 		22A22C67275E74560016A1E8 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C66275E74560016A1E8 /* Pagination.swift */; };
 		22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C68275E74B10016A1E8 /* InsertMode.swift */; };
+		22AA24C6276548F3006B24DD /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA24C5276548F3006B24DD /* AddButton.swift */; };
+		22AA24C827654A21006B24DD /* AddHospitalPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA24C727654A21006B24DD /* AddHospitalPage.swift */; };
+		22AA24CA2765515C006B24DD /* AddCompanyPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA24C92765515C006B24DD /* AddCompanyPage.swift */; };
 		22BA96F92752258F0045BAE1 /* CompaniesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */; };
 		22BA96FB275229890045BAE1 /* Hospital.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FA275229890045BAE1 /* Hospital.swift */; };
 		22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */; };
@@ -68,6 +71,9 @@
 		22A18F1827514E4D0015B94B /* AgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgesView.swift; sourceTree = "<group>"; };
 		22A22C66275E74560016A1E8 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		22A22C68275E74B10016A1E8 /* InsertMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMode.swift; sourceTree = "<group>"; };
+		22AA24C5276548F3006B24DD /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		22AA24C727654A21006B24DD /* AddHospitalPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHospitalPage.swift; sourceTree = "<group>"; };
+		22AA24C92765515C006B24DD /* AddCompanyPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyPage.swift; sourceTree = "<group>"; };
 		22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesViewModel.swift; sourceTree = "<group>"; };
 		22BA96FA275229890045BAE1 /* Hospital.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hospital.swift; sourceTree = "<group>"; };
 		22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalsViewModel.swift; sourceTree = "<group>"; };
@@ -251,6 +257,7 @@
 				22A18F152751498F0015B94B /* CompanyTileView.swift */,
 				22A18F0D275144950015B94B /* CompaniesView.swift */,
 				22BA9720275271340045BAE1 /* ErrorView.swift */,
+				22AA24C92765515C006B24DD /* AddCompanyPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -267,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				22A18F0B275143ED0015B94B /* HospitalsView.swift */,
+				22AA24C727654A21006B24DD /* AddHospitalPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 				22E11CE727550A1300827590 /* ApiError.swift */,
 				22A22C66275E74560016A1E8 /* Pagination.swift */,
 				22A22C68275E74B10016A1E8 /* InsertMode.swift */,
+				22AA24C5276548F3006B24DD /* AddButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -478,6 +487,7 @@
 				22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */,
 				2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */,
 				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
+				22AA24C827654A21006B24DD /* AddHospitalPage.swift in Sources */,
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
 				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,
 				22E11CE827550A1300827590 /* ApiError.swift in Sources */,
@@ -485,8 +495,10 @@
 				22905C16275682D700DF1170 /* TeklifSonucDetailsView.swift in Sources */,
 				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,
 				22BA96F92752258F0045BAE1 /* CompaniesViewModel.swift in Sources */,
+				22AA24C6276548F3006B24DD /* AddButton.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
 				22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */,
+				22AA24CA2765515C006B24DD /* AddCompanyPage.swift in Sources */,
 				22A22C67275E74560016A1E8 /* Pagination.swift in Sources */,
 				22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */,
 				22BA9721275271340045BAE1 /* ErrorView.swift in Sources */,

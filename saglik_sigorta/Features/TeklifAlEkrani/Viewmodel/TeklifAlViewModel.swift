@@ -76,7 +76,7 @@ class TeklifAlViewModel: ObservableObject {
             "hospitalName": hospitalName
         ]
         
-        let urlString = ApiUrls.offer(companyId: "sadasd")
+        let urlString = ApiUrls.offer(companyId: 4)
         
         AF
         .request(urlString, method: .post, parameters: params)

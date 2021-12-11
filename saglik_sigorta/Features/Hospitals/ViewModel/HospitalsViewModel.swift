@@ -11,7 +11,7 @@ class HospitalsViewModel: ObservableObject {
     var searched = false
     // TODO: inject dependency
     let pg: Pagination = Pagination<Hospital>()
-    let companyId: String
+    let companyId: Int
     // TODO: inject dependency
     let hospitalService: HospitalServiceProtocol = HospitalService()
     
@@ -20,7 +20,7 @@ class HospitalsViewModel: ObservableObject {
     @Published var error: ApiError?
     @Published var notFound: Bool = false
     
-    init(companyId: String) {
+    init(companyId: Int) {
         self.companyId = companyId
         loadMore()
     }

@@ -69,14 +69,14 @@ struct TeklifSonucDetailsView: View {
 
 struct TeklifSonucDetailsView_Previews: PreviewProvider {
     static let offer = Offer(
-        id: "sadasddddd",
-        company: Company(id: "sadasd", name: "Ak Sigorta", image: "sadasd", affiliatedHospitals: []),
+        id: 2,
+        company: Company(id: 5, name: "Ak Sigorta", image: "sadasd"),
         ageStart: 10,
         ageEnd: 21,
                              //age: 20,
                              amount: 456,
                              hospital:
-                              Hospital(id: "323334",
+                              Hospital(id: 7,
                                        name: "Adnan Hastanesi",
                                        address: Address(il: "İstanbul",
                                                         ilce: "Kartal",

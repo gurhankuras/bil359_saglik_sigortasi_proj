@@ -78,8 +78,8 @@
             filePath = "saglik_sigorta/Features/Companies/View/CompaniesView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "searchCompanyHandler()"
             landmarkType = "7">
          </BreakpointContent>

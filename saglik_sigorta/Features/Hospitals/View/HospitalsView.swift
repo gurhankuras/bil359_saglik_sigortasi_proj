@@ -25,6 +25,7 @@ struct HospitalsView : View {
             SearchBar(searchText: $searchText, placeholder: "Hastane Ara", actionText: "Ara") {
                 hospitalVM.searchFor(name: searchText)
             }
+            /*
             ScrollView {
                 LazyVStack {
                     ForEach(hospitalVM.hospitals) { hospital in
@@ -40,6 +41,24 @@ struct HospitalsView : View {
             }
         
         }
+             */
+            
+            List {
+                //LazyVStack {
+                ForEach(hospitalVM.hospitals) { hospital in
+                        HospitalView(hospital)
+                            
+                        .onAppear {
+                            if !hospitalVM.searched {
+                                hospitalVM.loadMore(currentItem: hospital)
+                            }
+                        }
+                            
+                    }
+                    .onDelete(perform: hospitalVM.deleteHospital(offsets:))
+                //}
+            }.listStyle(PlainListStyle())
+                
             .navigationTitle("Hastaneler")
             .alert("Bulunamadı", isPresented: $hospitalVM.notFound) {
                 Text("Tamam")
@@ -67,7 +86,7 @@ struct TeklifAlButton: View {
                 .lineLimit(1)
                 .font(.callout)
                 .foregroundColor(.white)
-                .background(.primary)
+                .background(.blue)
                 .frame(minWidth: 80)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
     }

@@ -57,7 +57,7 @@ struct CompanyOffersPage : View {
         }
         .overlay(
             NavigationLink(destination: {
-                Text("sadasd")
+                AddOfferPage()
             }, label: {
                 AddButton()
             })

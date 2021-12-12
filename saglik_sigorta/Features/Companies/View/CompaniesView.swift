@@ -145,6 +145,15 @@ struct CompanyListView: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    NavigationLink {
+                        CompanyOffersPage()
+                    } label: {
+                        Text("Şirket Teklifleri")
+                            .foregroundColor(.blue)
+                    }
+
+                }
             }
         //.padding(.top)
        

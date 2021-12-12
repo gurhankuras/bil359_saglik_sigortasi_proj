@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		222A350327578DE200C9CF7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A350227578DE200C9CF7D /* Alamofire */; };
 		2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */; };
+		224FAE632765F49800192E89 /* OfferDetailsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE622765F49800192E89 /* OfferDetailsTile.swift */; };
+		224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE642766081A00192E89 /* AddOfferPage.swift */; };
 		22905C0827566EE400DF1170 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0727566EE400DF1170 /* Offer.swift */; };
 		22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0D275674B600DF1170 /* TeklifAlView.swift */; };
 		22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C102756790C00DF1170 /* TeklifAlViewModel.swift */; };
@@ -21,7 +23,7 @@
 		22A18F0E275144950015B94B /* CompaniesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0D275144950015B94B /* CompaniesView.swift */; };
 		22A18F102751465B0015B94B /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F0F2751465B0015B94B /* Company.swift */; };
 		22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F152751498F0015B94B /* CompanyTileView.swift */; };
-		22A18F1927514E4D0015B94B /* AgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* AgesView.swift */; };
+		22A18F1927514E4D0015B94B /* CompanyOffersPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F1827514E4D0015B94B /* CompanyOffersPage.swift */; };
 		22A22C67275E74560016A1E8 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C66275E74560016A1E8 /* Pagination.swift */; };
 		22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A22C68275E74B10016A1E8 /* InsertMode.swift */; };
 		22AA24C6276548F3006B24DD /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AA24C5276548F3006B24DD /* AddButton.swift */; };
@@ -55,6 +57,8 @@
 
 /* Begin PBXFileReference section */
 		2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExtension.swift; sourceTree = "<group>"; };
+		224FAE622765F49800192E89 /* OfferDetailsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTile.swift; sourceTree = "<group>"; };
+		224FAE642766081A00192E89 /* AddOfferPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferPage.swift; sourceTree = "<group>"; };
 		22905C0727566EE400DF1170 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		22905C0D275674B600DF1170 /* TeklifAlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlView.swift; sourceTree = "<group>"; };
 		22905C102756790C00DF1170 /* TeklifAlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlViewModel.swift; sourceTree = "<group>"; };
@@ -68,7 +72,7 @@
 		22A18F0D275144950015B94B /* CompaniesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompaniesView.swift; sourceTree = "<group>"; };
 		22A18F0F2751465B0015B94B /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		22A18F152751498F0015B94B /* CompanyTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyTileView.swift; sourceTree = "<group>"; };
-		22A18F1827514E4D0015B94B /* AgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgesView.swift; sourceTree = "<group>"; };
+		22A18F1827514E4D0015B94B /* CompanyOffersPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyOffersPage.swift; sourceTree = "<group>"; };
 		22A22C66275E74560016A1E8 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		22A22C68275E74B10016A1E8 /* InsertMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertMode.swift; sourceTree = "<group>"; };
 		22AA24C5276548F3006B24DD /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
@@ -131,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				22905C0D275674B600DF1170 /* TeklifAlView.swift */,
+				224FAE622765F49800192E89 /* OfferDetailsTile.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -313,7 +318,8 @@
 		22BA9706275244BD0045BAE1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22A18F1827514E4D0015B94B /* AgesView.swift */,
+				22A18F1827514E4D0015B94B /* CompanyOffersPage.swift */,
+				224FAE642766081A00192E89 /* AddOfferPage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */,
 				22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */,
 				22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */,
 				22E11CE62755076900827590 /* HospitalService.swift in Sources */,
@@ -483,11 +490,12 @@
 				22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
 				22BA97052752429C0045BAE1 /* ApiUrls.swift in Sources */,
-				22A18F1927514E4D0015B94B /* AgesView.swift in Sources */,
+				22A18F1927514E4D0015B94B /* CompanyOffersPage.swift in Sources */,
 				22BA971F275263A10045BAE1 /* CompaniesService.swift in Sources */,
 				2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */,
 				22BA970A275245080045BAE1 /* AgeBasedOfferViewModel.swift in Sources */,
 				22AA24C827654A21006B24DD /* AddHospitalPage.swift in Sources */,
+				224FAE632765F49800192E89 /* OfferDetailsTile.swift in Sources */,
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
 				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,
 				22E11CE827550A1300827590 /* ApiError.swift in Sources */,

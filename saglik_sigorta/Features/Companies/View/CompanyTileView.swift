@@ -19,14 +19,15 @@ struct CompanyTileView: View {
                 .font(.caption)
             
             Spacer()
+            /*
             AgeGroupsButton(
                 text: "Yaş Grupları",
                 destination: {
                    CompanyOffersPage()
                 }
             )
-             
-            /*
+             */
+            
             HospitalsButton(
                 text: "Hastaneler",
                 destination: {
@@ -35,7 +36,7 @@ struct CompanyTileView: View {
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
                 
             )
-             */
+             
            
              
             
@@ -54,12 +55,15 @@ struct CompanyTileView: View {
 struct CompanyLogo: View {
     let url: String
     var body: some View {
+        
         Circle().frame(width: 50, height: 50)
             .foregroundColor(.blue)
+        
         
         /*
         AsyncImage(url: URL(string: url)) { image in
             image.resizable()
+                .scaledToFit()
         } placeholder: {
             Color.blue
         }

@@ -96,7 +96,7 @@ class CompaniesViewModel : ObservableObject {
         let willDeletedCompany = companies[willDeletedIndex]
         print(willDeletedCompany)
         
-        guard let request = makeDenemeRequest() else {
+        guard let request = makeDenemeRequest(id: willDeletedCompany.id) else {
             return
         }
         
@@ -104,10 +104,11 @@ class CompaniesViewModel : ObservableObject {
             .receive(on: DispatchQueue.main)
             .tryMap(handleOutput(output:))
             .decode(type: DemoMessage.self, decoder: JSONDecoder())
-            .sink { (completion) in
+            .sink { [weak self] (completion) in
                 switch completion {
                 case .finished:
                     print("finished")
+                    self?.companies.remove(atOffsets: offsets)
                 case .failure(let error):
                     print("HATA OLDU")
                 }
@@ -117,7 +118,7 @@ class CompaniesViewModel : ObservableObject {
                 print(msg.message)
             }
             .store(in: &cancellables)
-        companies.remove(atOffsets: offsets)
+        
     }
     
     private func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
@@ -130,8 +131,8 @@ class CompaniesViewModel : ObservableObject {
     }
     
     
-    private func makeDenemeRequest() -> URLRequest? {
-        guard let url = URL(string: ApiUrls.deneme()) else {
+    private func makeDenemeRequest(id: Int) -> URLRequest? {
+        guard let url = URL(string: ApiUrls.deleteCompany(id: id)) else {
             print("Error: cannot create URL")
             return nil
         }

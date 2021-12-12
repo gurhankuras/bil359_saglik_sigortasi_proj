@@ -30,8 +30,13 @@ enum ApiUrls: String {
         return formattedURL
     }
     
-    static func deneme() -> String {
-        let formattedUrl = "\(baseUrl)/api/deneme"
+    static func deleteCompany(id: Int) -> String {
+        let formattedUrl = "\(baseUrl)/api/companies/\(id)"
+        return formattedUrl
+    }
+    
+    static func deleteHospital(id: Int) -> String {
+        let formattedUrl = "\(baseUrl)/api/hospitals/\(id)"
         return formattedUrl
     }
 }

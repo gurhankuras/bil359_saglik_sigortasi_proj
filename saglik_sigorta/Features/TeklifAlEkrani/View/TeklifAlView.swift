@@ -63,14 +63,28 @@ struct TeklifAlView_Previews: PreviewProvider {
 struct TeklifAlViewDetails: View {
     let offer: Offer
     var body: some View {
-        Spacer()
-        TeklifDetails(offer: offer)
-        Spacer()
-        Spacer()
+        // Spacer()
+        ScrollView {
+            VStack {
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+                OfferDetailsTile(offer: offer)
+            }            
+        }
+        // Spacer()
+        // Spacer()
+        /*
         NavigationLink(destination: TeklifSonucDetailsView(offer: offer),
                        label: {
             TeklifAlViewButton(text: "Teklif Al")
         })
+         */
+        
     }
 }
 
@@ -88,20 +102,3 @@ struct TeklifAlViewButton: View {
     }
 }
 
-struct TeklifDetails: View {
-    let offer: Offer
-    var body: some View {
-        VStack {
-            Text("Yaş: \(offer.ageStr)")
-            //Text("Yas")
-                .font(.largeTitle)
-                .padding()
-            Text("Yaş Aralığı \(offer.ageRangeText)")
-            Text("\(offer.company.name)")
-                .font(.system(size: 25))
-            Text("\(String(format: "%.1f", offer.amount))₺")
-                .font(.system(size: 60))
-                .fontWeight(.semibold)
-        }
-    }
-}

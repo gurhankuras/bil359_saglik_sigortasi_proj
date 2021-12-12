@@ -39,4 +39,9 @@ enum ApiUrls: String {
         let formattedUrl = "\(baseUrl)/api/hospitals/\(id)"
         return formattedUrl
     }
+    
+    static func addOffer() -> String {
+        let formattedUrl = "\(baseUrl)/api/offers"
+        return formattedUrl
+    }
 }

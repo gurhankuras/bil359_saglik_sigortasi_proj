@@ -11,6 +11,7 @@
 		2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */; };
 		224FAE632765F49800192E89 /* OfferDetailsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE622765F49800192E89 /* OfferDetailsTile.swift */; };
 		224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE642766081A00192E89 /* AddOfferPage.swift */; };
+		224FAE6727661BBE00192E89 /* AddOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE6627661BBE00192E89 /* AddOfferViewModel.swift */; };
 		22905C0827566EE400DF1170 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0727566EE400DF1170 /* Offer.swift */; };
 		22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0D275674B600DF1170 /* TeklifAlView.swift */; };
 		22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C102756790C00DF1170 /* TeklifAlViewModel.swift */; };
@@ -59,6 +60,7 @@
 		2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExtension.swift; sourceTree = "<group>"; };
 		224FAE622765F49800192E89 /* OfferDetailsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTile.swift; sourceTree = "<group>"; };
 		224FAE642766081A00192E89 /* AddOfferPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferPage.swift; sourceTree = "<group>"; };
+		224FAE6627661BBE00192E89 /* AddOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferViewModel.swift; sourceTree = "<group>"; };
 		22905C0727566EE400DF1170 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		22905C0D275674B600DF1170 /* TeklifAlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlView.swift; sourceTree = "<group>"; };
 		22905C102756790C00DF1170 /* TeklifAlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlViewModel.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				22BA9709275245080045BAE1 /* AgeBasedOfferViewModel.swift */,
+				224FAE6627661BBE00192E89 /* AddOfferViewModel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,
 				22BA96F92752258F0045BAE1 /* CompaniesViewModel.swift in Sources */,
 				22AA24C6276548F3006B24DD /* AddButton.swift in Sources */,
+				224FAE6727661BBE00192E89 /* AddOfferViewModel.swift in Sources */,
 				22A18EFC275141BD0015B94B /* saglik_sigortaApp.swift in Sources */,
 				22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */,
 				22AA24CA2765515C006B24DD /* AddCompanyPage.swift in Sources */,

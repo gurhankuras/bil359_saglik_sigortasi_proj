@@ -14,7 +14,7 @@ struct Offer: Decodable, Identifiable {
     let ageStart: Int
     let ageEnd: Int
     let amount: Double
-    let hospital: Hospital
+    let hospitalId: Int
     
     var age: Int?
     
@@ -31,6 +31,6 @@ struct Offer: Decodable, Identifiable {
     }
     
     private enum CodingKeys : String, CodingKey {
-        case id, company, ageStart="age_start", ageEnd="age_end", amount="price", hospital
+        case id, company, ageStart="age_start", ageEnd="age_end", amount="price", hospitalId="hospital_id"
     }
 }

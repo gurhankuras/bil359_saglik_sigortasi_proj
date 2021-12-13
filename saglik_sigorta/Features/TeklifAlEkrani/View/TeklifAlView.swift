@@ -28,7 +28,7 @@ struct TeklifAlView: View {
                 ErrorView(message: vm.errorMessage)
             }
             else if vm.isOfferReady {
-                TeklifAlViewDetails(offer: vm.offer!)
+                TeklifAlViewDetails(offers: $vm.offers)
             }
             else {
                 Spacer()
@@ -61,20 +61,13 @@ struct TeklifAlView_Previews: PreviewProvider {
 
 
 struct TeklifAlViewDetails: View {
-    let offer: Offer
+    @Binding var offers: [Offer]
     var body: some View {
         // Spacer()
         ScrollView {
-            VStack {
+            ForEach(offers) { offer in
                 OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-                OfferDetailsTile(offer: offer)
-            }            
+            }
         }
         // Spacer()
         // Spacer()

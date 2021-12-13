@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddCompanyPage: View {
     @Environment(\.dismiss) var dismiss
-    @State var companyName: String = ""
+    @StateObject var vm = AddCompanyViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,7 +17,7 @@ struct AddCompanyPage: View {
             Text("Şirket Adı")
                 .font(.title.bold())
                 .frame(maxWidth: .infinity)
-            SearchBox(searchText: $companyName, placeholder: "Giriniz...")
+            SearchBox(searchText: $vm.name, placeholder: "Giriniz...")
             Spacer()
             HStack {
                 Button {
@@ -37,7 +37,8 @@ struct AddCompanyPage: View {
                 .tint(.white)
                 
                 Button {
-                    dismiss()
+                    vm.addCompany()
+                    
                 } label: {
                     
                     Text("Ekle")
@@ -58,6 +59,14 @@ struct AddCompanyPage: View {
         .padding()
         .navigationTitle("Şirketler")
         .navigationBarTitleDisplayMode(.inline)
+        .alert(vm.infoMessage ?? "", isPresented: $vm.showAlert) {
+            Button {
+                dismiss()
+            } label: {
+                Text("Tamam")
+            }
+
+        }
         
     }
 }

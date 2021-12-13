@@ -21,7 +21,7 @@ class HospitalsViewModel: ObservableObject {
     @Published var hospitalsLoading: Bool = false
     @Published var error: ApiError?
     @Published var notFound: Bool = false
-    
+   
     init(companyId: Int) {
         self.companyId = companyId
         loadMore()
@@ -109,6 +109,7 @@ class HospitalsViewModel: ObservableObject {
                     print("finished")
                     self?.hospitals.remove(atOffsets: offsets)
                 case .failure(let error):
+                    print(error)
                     print("HATA OLDU")
                 }
                 print("COMPLETION: \(completion)")
@@ -120,6 +121,7 @@ class HospitalsViewModel: ObservableObject {
         
     }
     
+  
     private func handleOutput(output: URLSession.DataTaskPublisher.Output) throws -> Data {
         let (data, response) = output;
         guard let response = response as? HTTPURLResponse,
@@ -140,6 +142,8 @@ class HospitalsViewModel: ObservableObject {
         request.httpMethod = "DELETE"
         return request
     }
+    
+    
 }
 
 

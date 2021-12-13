@@ -24,24 +24,24 @@ struct AgePricing: Identifiable {
 
 struct CompanyOffersPage : View {
     let emptyStr = ""
-    @StateObject var ageVM : AgeBasedOfferViewModel = AgeBasedOfferViewModel()
+    @StateObject var vm : AgeBasedOfferViewModel = AgeBasedOfferViewModel()
    
     var body: some View {
         VStack {
+            /*
             SearchBar(searchText: $ageVM.searchText, placeholder: "Yaşınızı giriniz", actionText: "Ara") {
                 guard let age = ageVM.validateAgeInput() else {
                     return
                 }
                 ageVM.getOffer(forAge: age)
             }
+             */
             //ScrollView {
             List {
-                ForEach(1..<10, id: \.self) { index in
-                    
-                    CompanyOfferAccordion()
-                    
+                ForEach(vm.offers) { companyOffer in
+                    CompanyOfferAccordion(companyOffer: companyOffer)
                 }.onDelete { indexSet in
-                    
+                    vm.deleteCompany(offsets: indexSet)
                 }
                 
             }
@@ -50,19 +50,20 @@ struct CompanyOffersPage : View {
             //}
         }
         .navigationTitle("Şirket Teklifi")
+        /*
         .alert(ageVM.errorMessage, isPresented: $ageVM.showErrorMessage) {
             Button("Ok") {
                 
             }
         }
+         */
         .overlay(
             NavigationLink(destination: {
                 AddOfferPage()
             }, label: {
                 AddButton()
             })
-                .tint(.white)
-                    ,
+                .tint(.white),
                 alignment: .bottomTrailing
            
         )
@@ -79,14 +80,8 @@ struct CompanyOffersPage_Previews: PreviewProvider {
 }
 
 struct CompanyOfferAccordion: View {
-    
-    let prices = [
-        AgePricing(ageStart: 0, ageEnd: 9, price: 300.0),
-        AgePricing(ageStart: 10, ageEnd: 18, price: 300.0),
-        AgePricing(ageStart: 19, ageEnd: 25, price: 300.0),
-        AgePricing(ageStart: 26, ageEnd: 50, price: 300.0),
-        AgePricing(ageStart: 65, ageEnd: 999, price: 300.0),
-    ]
+    let companyOffer: CompanyOffersResponse
+
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -97,7 +92,8 @@ struct CompanyOfferAccordion: View {
     var body: some View {
         VStack {
             HStack {
-                Text("Axa Sigorta")
+                CompanyLogo(url: companyOffer.company.image)
+                Text(companyOffer.company.name)
                     .bold()
                 Spacer()
                 Image(systemName: "chevron.down")
@@ -115,12 +111,12 @@ struct CompanyOfferAccordion: View {
                     Text("Yaş Grubu Teklifleri")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     LazyVGrid(columns: columns, spacing: 15) {
-                        ForEach(prices) { p in
+                        ForEach(companyOffer.ageOffers) { offer in
                             HStack {
-                                Text("\(p.ageString)")
+                                Text("\(offer.ageStr)")
                                     .frame(width: 50, alignment: .leading)
                                 Text(":")
-                                Text(String(p.price))
+                                Text(String(offer.price))
                                 
                             }
                         }

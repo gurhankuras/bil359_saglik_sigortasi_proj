@@ -12,7 +12,7 @@ class TeklifAlViewModel: ObservableObject {
     @Published var age: String = ""
     @Published var hospitalInfo: String = ""
 
-    @Published var offer: Offer?
+    @Published var offers: [Offer] = []
     @Published var offerIsLoading: Bool = false
 
     @Published var errorMessage: String = "" {
@@ -32,9 +32,11 @@ class TeklifAlViewModel: ObservableObject {
         return !errorMessage.isEmpty || showErrorMessage
     }
     
+    
     var isOfferReady: Bool {
-        return offer != nil && !hasError
+        return !offers.isEmpty && !hasError
     }
+     
     
     let validator: FindOfferValidationService = FindOfferValidationService()
     
@@ -56,9 +58,9 @@ class TeklifAlViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.offerIsLoading = true
                 switch result {
-                    case .success(var offer):
-                        offer.age = age
-                        self?.offer = offer
+                    case .success(var offers):
+                        // offer.age = age
+                        self?.offers = offers
                     case .failure(let error):
                         print(error)
                     self?.errorMessage = error.rawValue
@@ -70,7 +72,7 @@ class TeklifAlViewModel: ObservableObject {
     }
     
     
-    func fetchOffer(age: Int, hospitalName: String, completed: @escaping ApiResultCallback<Offer, ApiError>) {
+    func fetchOffer(age: Int, hospitalName: String, completed: @escaping ApiResultCallback<[Offer], ApiError>) {
         let params: [String: Any] = [
             "age": age,
             "hospitalName": hospitalName
@@ -80,7 +82,7 @@ class TeklifAlViewModel: ObservableObject {
         
         AF
         .request(urlString, method: .post, parameters: params)
-        .responseDecodable(of: Offer.self) { response in
+        .responseDecodable(of: [Offer].self) { response in
             if response.response?.statusCode == 404 {
                 completed(.failure(.notFound))
                 return
@@ -88,8 +90,8 @@ class TeklifAlViewModel: ObservableObject {
             let result = response.result;
             print(result)
             switch result {
-                case .success(let offer):
-                    completed(.success(offer))
+                case .success(let offers):
+                    completed(.success(offers))
                 case .failure(let error):
                     print(error)
                     completed(.failure(.error))

@@ -55,12 +55,12 @@ struct CompanyTileView: View {
 struct CompanyLogo: View {
     let url: String
     var body: some View {
-        
+        /*
         Circle().frame(width: 50, height: 50)
             .foregroundColor(.blue)
+        */
         
         
-        /*
         AsyncImage(url: URL(string: url)) { image in
             image.resizable()
                 .scaledToFit()
@@ -70,7 +70,7 @@ struct CompanyLogo: View {
         .frame(width: 50, height: 50)
         .clipShape(Circle())
     
-         */
+         
          }
 }
 

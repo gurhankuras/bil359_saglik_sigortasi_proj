@@ -77,7 +77,6 @@ class AddOfferViewModel: ObservableObject {
             return nil
         }
         
-        
         return ["name": companyName,
                 "ageStart": ageStart,
                 "ageEnd": ageEnd,

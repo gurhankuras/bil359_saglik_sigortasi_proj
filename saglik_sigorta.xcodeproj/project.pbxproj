@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		222A350327578DE200C9CF7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A350227578DE200C9CF7D /* Alamofire */; };
+		22304A3627676B6100FA60A6 /* CompanyOfferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22304A3527676B6100FA60A6 /* CompanyOfferResponse.swift */; };
 		2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */; };
 		224FAE632765F49800192E89 /* OfferDetailsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE622765F49800192E89 /* OfferDetailsTile.swift */; };
 		224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE642766081A00192E89 /* AddOfferPage.swift */; };
 		224FAE6727661BBE00192E89 /* AddOfferViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE6627661BBE00192E89 /* AddOfferViewModel.swift */; };
+		227FC108276743670001690B /* AddHospitalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FC107276743670001690B /* AddHospitalViewModel.swift */; };
+		227FC10A27675AB20001690B /* AddCompanyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FC10927675AB20001690B /* AddCompanyViewModel.swift */; };
+		227FC10D2767621C0001690B /* TeklifSonucDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227FC10C2767621C0001690B /* TeklifSonucDetailsViewModel.swift */; };
 		22905C0827566EE400DF1170 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0727566EE400DF1170 /* Offer.swift */; };
 		22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C0D275674B600DF1170 /* TeklifAlView.swift */; };
 		22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22905C102756790C00DF1170 /* TeklifAlViewModel.swift */; };
@@ -57,10 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		22304A3527676B6100FA60A6 /* CompanyOfferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyOfferResponse.swift; sourceTree = "<group>"; };
 		2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExtension.swift; sourceTree = "<group>"; };
 		224FAE622765F49800192E89 /* OfferDetailsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTile.swift; sourceTree = "<group>"; };
 		224FAE642766081A00192E89 /* AddOfferPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferPage.swift; sourceTree = "<group>"; };
 		224FAE6627661BBE00192E89 /* AddOfferViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferViewModel.swift; sourceTree = "<group>"; };
+		227FC107276743670001690B /* AddHospitalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHospitalViewModel.swift; sourceTree = "<group>"; };
+		227FC10927675AB20001690B /* AddCompanyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCompanyViewModel.swift; sourceTree = "<group>"; };
+		227FC10C2767621C0001690B /* TeklifSonucDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifSonucDetailsViewModel.swift; sourceTree = "<group>"; };
 		22905C0727566EE400DF1170 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		22905C0D275674B600DF1170 /* TeklifAlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlView.swift; sourceTree = "<group>"; };
 		22905C102756790C00DF1170 /* TeklifAlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeklifAlViewModel.swift; sourceTree = "<group>"; };
@@ -124,6 +132,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		227FC10B276762060001690B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				227FC10C2767621C0001690B /* TeklifSonucDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		22905C092756747D00DF1170 /* TeklifAlEkrani */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +169,7 @@
 		22905C13275682BA00DF1170 /* TeklifSonucDetails */ = {
 			isa = PBXGroup;
 			children = (
+				227FC10B276762060001690B /* ViewModel */,
 				22905C14275682C900DF1170 /* View */,
 			);
 			path = TeklifSonucDetails;
@@ -273,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				22BA96F82752258F0045BAE1 /* CompaniesViewModel.swift */,
+				227FC10927675AB20001690B /* AddCompanyViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -298,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				22BA96FF275229D40045BAE1 /* HospitalsViewModel.swift */,
+				227FC107276743670001690B /* AddHospitalViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -330,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				22905C0727566EE400DF1170 /* Offer.swift */,
+				22304A3527676B6100FA60A6 /* CompanyOfferResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -482,13 +502,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				227FC10A27675AB20001690B /* AddCompanyViewModel.swift in Sources */,
 				224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */,
 				22905C112756790C00DF1170 /* TeklifAlViewModel.swift in Sources */,
+				227FC108276743670001690B /* AddHospitalViewModel.swift in Sources */,
 				22BA97232752721B0045BAE1 /* AppSymbols.swift in Sources */,
 				22E11CE62755076900827590 /* HospitalService.swift in Sources */,
 				22A18F0C275143ED0015B94B /* HospitalsView.swift in Sources */,
 				22A18F102751465B0015B94B /* Company.swift in Sources */,
 				22905C0827566EE400DF1170 /* Offer.swift in Sources */,
+				22304A3627676B6100FA60A6 /* CompanyOfferResponse.swift in Sources */,
 				22A18F0E275144950015B94B /* CompaniesView.swift in Sources */,
 				22905C0E275674B600DF1170 /* TeklifAlView.swift in Sources */,
 				22A18EFE275141BD0015B94B /* ContentView.swift in Sources */,
@@ -502,6 +525,7 @@
 				22BA96FB275229890045BAE1 /* Hospital.swift in Sources */,
 				22BA9700275229D40045BAE1 /* HospitalsViewModel.swift in Sources */,
 				22E11CE827550A1300827590 /* ApiError.swift in Sources */,
+				227FC10D2767621C0001690B /* TeklifSonucDetailsViewModel.swift in Sources */,
 				22BA970327522CF40045BAE1 /* LazyView.swift in Sources */,
 				22905C16275682D700DF1170 /* TeklifSonucDetailsView.swift in Sources */,
 				22BA970D275249570045BAE1 /* ValidationService.swift in Sources */,

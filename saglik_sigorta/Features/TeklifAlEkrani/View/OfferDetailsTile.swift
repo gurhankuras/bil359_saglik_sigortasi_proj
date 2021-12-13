@@ -23,7 +23,8 @@ struct OfferDetailsTile: View {
              */
            
             Divider()
-            Text("\(String(format: "%.1f", offer.amount))₺")
+           // Text("\(String(format: "%.1f", offer.amount))₺")
+            Text("\(offer.amount)")
                 .font(.body)
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity)
@@ -33,6 +34,7 @@ struct OfferDetailsTile: View {
             NavigationLink {
                 TeklifSonucDetailsView(offer: offer)
             } label: {
+                
                 Text("Kabul Et")
                     .lineLimit(1)
                     .padding(.horizontal)
@@ -51,7 +53,7 @@ struct OfferDetailsTile: View {
 
 struct OfferDetailsTile_Previews: PreviewProvider {
     static var previews: some View {
-        OfferDetailsTile(offer: Offer(id: 1, company: Company(id: 2, name: "Axa Sigorta", image: ""), ageStart: 10, ageEnd: 20, amount: 345.50, hospital: Hospital(id: 3, name: "Adnan Hastanesi", address: Address(il: "İstanbul", ilce: "Kartal", mahalle: "Abc Mahallesi", sokak: "B Sokak", no: 12)), age: 13)
+        OfferDetailsTile(offer: Offer(id: 1, company: Company(id: 2, name: "Axa Sigorta", image: ""), ageStart: 10, ageEnd: 20, amount: 345.50, hospitalId: 1, age: 13)
         
         )
             .preferredColorScheme(.dark)

@@ -18,6 +18,10 @@ struct Offer: Decodable, Identifiable {
     
     var age: Int?
     
+    var priceStr: String {
+        "\(amount.toFixedString(2))₺"
+    }
+    
     var ageStr: String {
         return age != nil ? "\(String(age!))" : "-"
     }

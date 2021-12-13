@@ -17,8 +17,10 @@ struct CompanyTileView: View {
             CompanyLogo(url: company.image)
             Text(company.name)
                 .font(.caption)
-            
-            Spacer()
+                .lineLimit(1)
+                .frame(width: 100, alignment: .leading)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        
             /*
             AgeGroupsButton(
                 text: "Yaş Grupları",
@@ -34,7 +36,6 @@ struct CompanyTileView: View {
                     HospitalsView(companyId: company.id)
                 },
                 icon: Image(systemName: "cross.fill").foregroundColor(.red)
-                
             )
              
            

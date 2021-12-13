@@ -26,16 +26,16 @@ struct Address: Decodable {
     
     
     var ilStr: String {
-        return ilce ?? "-"
+        return il ?? "-"
     }
     var ilceStr: String {
         return ilce ?? "-"
     }
     var mahalleStr: String {
-        return ilce ?? "-"
+        return mahalle ?? "-"
     }
     var sokakStr: String {
-        return ilce ?? "-"
+        return sokak ?? "-"
     }
     var noStr: String {
         return no == nil ?  "-" : String(no!)

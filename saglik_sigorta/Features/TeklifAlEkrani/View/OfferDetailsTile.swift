@@ -11,10 +11,12 @@ struct OfferDetailsTile: View {
     let offer: Offer
     var body: some View {
         HStack {
-            CompanyLogo(url: "")
+            CompanyLogo(url: offer.company.image)
             Text("\(offer.company.name)")
+                .multilineTextAlignment(.leading)
                 .font(.body)
-                .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                
             /*
             VStack {
                 Text("Yaş Aralığı")
@@ -22,12 +24,12 @@ struct OfferDetailsTile: View {
             }
              */
            
-            Divider()
-           // Text("\(String(format: "%.1f", offer.amount))₺")
-            Text("\(offer.amount)")
+       
+          
+            Text(offer.priceStr)
                 .font(.body)
                 .fontWeight(.semibold)
-                .frame(maxWidth: .infinity)
+                //.frame(maxWidth: .infinity)
                 .padding(.leading)
                 
      

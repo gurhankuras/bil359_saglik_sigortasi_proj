@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		222A350327578DE200C9CF7D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 222A350227578DE200C9CF7D /* Alamofire */; };
 		22304A3627676B6100FA60A6 /* CompanyOfferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22304A3527676B6100FA60A6 /* CompanyOfferResponse.swift */; };
+		22304A3827677E9D00FA60A6 /* HospitalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22304A3727677E9D00FA60A6 /* HospitalView.swift */; };
+		22304A3A2767833800FA60A6 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22304A392767833800FA60A6 /* DoubleExtension.swift */; };
 		2236CC6827613AAA003B7F5B /* HTTPURLResponseExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */; };
 		224FAE632765F49800192E89 /* OfferDetailsTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE622765F49800192E89 /* OfferDetailsTile.swift */; };
 		224FAE652766081A00192E89 /* AddOfferPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FAE642766081A00192E89 /* AddOfferPage.swift */; };
@@ -62,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		22304A3527676B6100FA60A6 /* CompanyOfferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyOfferResponse.swift; sourceTree = "<group>"; };
+		22304A3727677E9D00FA60A6 /* HospitalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HospitalView.swift; sourceTree = "<group>"; };
+		22304A392767833800FA60A6 /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 		2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseExtension.swift; sourceTree = "<group>"; };
 		224FAE622765F49800192E89 /* OfferDetailsTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferDetailsTile.swift; sourceTree = "<group>"; };
 		224FAE642766081A00192E89 /* AddOfferPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfferPage.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				2236CC6727613AAA003B7F5B /* HTTPURLResponseExtension.swift */,
+				22304A392767833800FA60A6 /* DoubleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			children = (
 				22A18F0B275143ED0015B94B /* HospitalsView.swift */,
 				22AA24C727654A21006B24DD /* AddHospitalPage.swift */,
+				22304A3727677E9D00FA60A6 /* HospitalView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,7 +542,9 @@
 				22A22C69275E74B10016A1E8 /* InsertMode.swift in Sources */,
 				22AA24CA2765515C006B24DD /* AddCompanyPage.swift in Sources */,
 				22A22C67275E74560016A1E8 /* Pagination.swift in Sources */,
+				22304A3A2767833800FA60A6 /* DoubleExtension.swift in Sources */,
 				22A18F162751498F0015B94B /* CompanyTileView.swift in Sources */,
+				22304A3827677E9D00FA60A6 /* HospitalView.swift in Sources */,
 				22BA9721275271340045BAE1 /* ErrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -58,9 +58,10 @@ class TeklifAlViewModel: ObservableObject {
             DispatchQueue.main.async {
                 self?.offerIsLoading = true
                 switch result {
-                    case .success(var offers):
+                    case .success(let offers):
                         // offer.age = age
                         self?.offers = offers
+                    print(offers)
                     case .failure(let error):
                         print(error)
                     self?.errorMessage = error.rawValue
@@ -83,7 +84,7 @@ class TeklifAlViewModel: ObservableObject {
         AF
         .request(urlString, method: .post, parameters: params)
         .responseDecodable(of: [Offer].self) { response in
-            if response.response?.statusCode == 404 {
+            if response.response?.statusCode == 404 || response.response?.statusCode == 400 {
                 completed(.failure(.notFound))
                 return
             }

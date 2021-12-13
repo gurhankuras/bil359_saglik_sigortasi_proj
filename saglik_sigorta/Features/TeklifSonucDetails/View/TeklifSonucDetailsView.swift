@@ -53,7 +53,7 @@ struct TeklifSonucDetailsView: View {
                         VStack(alignment: .leading,  spacing: 7) {
                             Text(vm.hospital?.name ?? "-")
                             Divider()
-                            Text("\(offer.amount) TL")
+                            Text(offer.priceStr)
                             Divider()
                             Text(offer.ageRangeText)
                     

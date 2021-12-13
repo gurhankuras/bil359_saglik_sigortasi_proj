@@ -118,13 +118,13 @@ struct HospitalView: View {
             VStack {
                 Text("İl:").font(.subheadline)
                     .padding(.bottom, 2)
-                Text(hospital.address.il).bold()
+                Text(hospital.address.ilStr).bold()
             }
             Spacer()
             VStack {
                 Text("İlçe:").font(.subheadline)
                     .padding(.bottom, 2)
-                Text(hospital.address.ilce).bold()
+                Text(hospital.address.ilceStr).bold()
             }
             Spacer()
             NavigationLink(destination: TeklifAlView(), label: {

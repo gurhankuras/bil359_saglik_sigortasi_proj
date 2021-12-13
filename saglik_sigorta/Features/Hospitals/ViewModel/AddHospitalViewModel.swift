@@ -128,10 +128,11 @@ class AddHospitalViewModel: ObservableObject {
                 }
                 print("COMPLETION: \(completion)")
                 self?.addingHospital = false
-    
+                self?.showAlert = true
             } receiveValue: {[weak self] msg in
                 print(msg.message)
                 self?.infoMessage = msg.message
+                
                 // self?.showMessage = true
             }
             .store(in: &cancellables)

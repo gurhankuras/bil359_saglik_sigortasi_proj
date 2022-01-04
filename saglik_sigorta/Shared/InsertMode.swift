@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum InsertMode {
     case append, assign
 }

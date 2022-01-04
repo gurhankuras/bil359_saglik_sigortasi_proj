@@ -12,7 +12,6 @@ struct LazyView<T: View>: View {
         self.view = view
         // print("LazyView initiliazed!")
     }
-    
     var view: () -> T
     var body: some View {
         self.view()

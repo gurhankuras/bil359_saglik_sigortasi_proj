@@ -1,0 +1,6 @@
+projectKey=bil359
+serverUrl=http://localhost:9000
+serverVersion=8.9.6.50800
+dashboardUrl=http://localhost:9000/dashboard?id=bil359
+ceTaskId=AX4BOh6viI5O6Kjg7-VN
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX4BOh6viI5O6Kjg7-VN
